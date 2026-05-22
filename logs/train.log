@@ -1,0 +1,268 @@
+2026-05-22 10:45:29 | INFO | __main__ | ============================================================
+2026-05-22 10:45:29 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 10:45:29 | INFO | __main__ | ============================================================
+2026-05-22 10:45:29 | INFO | __main__ | Python: 3.12.13
+2026-05-22 10:45:29 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 10:45:29 | INFO | __main__ | CUDA: 12.8
+2026-05-22 10:45:29 | INFO | __main__ | GPU count: 1
+2026-05-22 10:45:29 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 10:45:29 | INFO | __main__ | BF16 supported: True
+2026-05-22 10:45:29 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 10:45:29 | INFO | __main__ | peft: 0.18.1
+2026-05-22 10:45:30 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 10:45:30 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 10:45:30 | INFO | __main__ | ============================================================
+2026-05-22 10:45:30 | INFO | __main__ | Random seeds set to 42
+2026-05-22 10:45:30 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 10:45:30 | INFO | __main__ | Model: meta-llama/Meta-Llama-3-8B-Instruct
+2026-05-22 10:45:30 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 10:45:30 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-22 10:45:30 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 10:45:30 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 10:45:30 | INFO | models.model_loader | Loading tokenizer: meta-llama/Meta-Llama-3-8B-Instruct
+2026-05-22 10:56:28 | INFO | __main__ | ============================================================
+2026-05-22 10:56:28 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 10:56:28 | INFO | __main__ | ============================================================
+2026-05-22 10:56:28 | INFO | __main__ | Python: 3.12.13
+2026-05-22 10:56:28 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 10:56:28 | INFO | __main__ | CUDA: 12.8
+2026-05-22 10:56:28 | INFO | __main__ | GPU count: 1
+2026-05-22 10:56:28 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 10:56:28 | INFO | __main__ | BF16 supported: True
+2026-05-22 10:56:28 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 10:56:28 | INFO | __main__ | peft: 0.18.1
+2026-05-22 10:56:29 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 10:56:29 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 10:56:29 | INFO | __main__ | ============================================================
+2026-05-22 10:56:29 | INFO | __main__ | Random seeds set to 42
+2026-05-22 10:56:29 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 10:56:29 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 10:56:29 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 10:56:29 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-22 10:56:29 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 10:56:29 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 10:56:29 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 10:56:35 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 10:56:35 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 10:56:35 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 10:56:37 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 10:56:46 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 10:56:46 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 10:56:46 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 10:56:46 | INFO | __main__ | Train: 8861 examples
+2026-05-22 10:56:46 | INFO | __main__ | Validation: 985 examples
+2026-05-22 10:56:46 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 10:56:52 | INFO | data.dataset | Packed 8861 examples into 1592 chunks of length 2048
+2026-05-22 10:56:52 | INFO | data.dataset | Packed 985 examples into 188 chunks of length 2048
+2026-05-22 10:56:52 | INFO | __main__ | Train batches: 398, Val batches: 47
+2026-05-22 10:56:52 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 10:56:52 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 10:56:52 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 11:17:56 | INFO | __main__ | ============================================================
+2026-05-22 11:17:56 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 11:17:56 | INFO | __main__ | ============================================================
+2026-05-22 11:17:56 | INFO | __main__ | Python: 3.12.13
+2026-05-22 11:17:56 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 11:17:56 | INFO | __main__ | CUDA: 12.8
+2026-05-22 11:17:56 | INFO | __main__ | GPU count: 1
+2026-05-22 11:17:56 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 11:17:56 | INFO | __main__ | BF16 supported: True
+2026-05-22 11:17:56 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 11:17:56 | INFO | __main__ | peft: 0.18.1
+2026-05-22 11:17:57 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 11:17:57 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 11:17:57 | INFO | __main__ | ============================================================
+2026-05-22 11:17:57 | INFO | __main__ | Random seeds set to 42
+2026-05-22 11:17:57 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 11:17:57 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 11:17:57 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 11:17:57 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-22 11:17:57 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 11:17:57 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 11:17:57 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 11:17:58 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 11:17:58 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 11:17:58 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 11:18:00 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 11:18:02 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 11:18:02 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 11:18:02 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 11:18:02 | INFO | __main__ | Train: 8861 examples
+2026-05-22 11:18:02 | INFO | __main__ | Validation: 985 examples
+2026-05-22 11:18:02 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 11:18:07 | INFO | data.dataset | Packed 8861 examples into 1592 chunks of length 2048
+2026-05-22 11:18:08 | INFO | data.dataset | Packed 985 examples into 188 chunks of length 2048
+2026-05-22 11:18:08 | INFO | __main__ | Train batches: 398, Val batches: 47
+2026-05-22 11:18:08 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 11:18:08 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 11:18:08 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:15:26 | INFO | accelerate.utils.modeling | We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2026-05-22 12:15:41 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 12:15:41 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 12:15:41 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 12:18:17 | INFO | __main__ | ============================================================
+2026-05-22 12:18:17 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 12:18:17 | INFO | __main__ | ============================================================
+2026-05-22 12:18:17 | INFO | __main__ | Python: 3.12.13
+2026-05-22 12:18:17 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 12:18:17 | INFO | __main__ | CUDA: 12.8
+2026-05-22 12:18:17 | INFO | __main__ | GPU count: 1
+2026-05-22 12:18:17 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 12:18:17 | INFO | __main__ | BF16 supported: True
+2026-05-22 12:18:17 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 12:18:17 | INFO | __main__ | peft: 0.18.1
+2026-05-22 12:18:18 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 12:18:18 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 12:18:18 | INFO | __main__ | ============================================================
+2026-05-22 12:18:18 | INFO | __main__ | Random seeds set to 42
+2026-05-22 12:18:18 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 12:18:18 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:18:18 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 12:18:18 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-22 12:18:18 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 12:18:18 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 12:18:18 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:18:20 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 12:18:20 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 12:18:20 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 12:18:21 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 12:18:23 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 12:18:23 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 12:18:23 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 12:18:23 | INFO | __main__ | Train: 8861 examples
+2026-05-22 12:18:23 | INFO | __main__ | Validation: 985 examples
+2026-05-22 12:18:23 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 12:18:28 | INFO | data.dataset | Packed 8861 examples into 1592 chunks of length 2048
+2026-05-22 12:18:29 | INFO | data.dataset | Packed 985 examples into 188 chunks of length 2048
+2026-05-22 12:18:29 | INFO | __main__ | Train batches: 398, Val batches: 47
+2026-05-22 12:18:29 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 12:18:29 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 12:18:29 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:18:30 | INFO | accelerate.utils.modeling | We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2026-05-22 12:18:43 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 12:18:43 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 12:18:43 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 12:23:56 | INFO | __main__ | ============================================================
+2026-05-22 12:23:56 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 12:23:56 | INFO | __main__ | ============================================================
+2026-05-22 12:23:56 | INFO | __main__ | Python: 3.12.13
+2026-05-22 12:23:56 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 12:23:56 | INFO | __main__ | CUDA: 12.8
+2026-05-22 12:23:56 | INFO | __main__ | GPU count: 1
+2026-05-22 12:23:56 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 12:23:56 | INFO | __main__ | BF16 supported: True
+2026-05-22 12:23:56 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 12:23:56 | INFO | __main__ | peft: 0.18.1
+2026-05-22 12:23:57 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 12:23:57 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 12:23:57 | INFO | __main__ | ============================================================
+2026-05-22 12:23:57 | INFO | __main__ | Random seeds set to 42
+2026-05-22 12:23:57 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 12:23:57 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:23:57 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 12:23:57 | INFO | __main__ | LoRA rank: 16, alpha: 32
+2026-05-22 12:23:57 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 12:23:57 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 12:23:57 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:24:04 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 12:24:04 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 12:24:04 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 12:24:05 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 12:24:07 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 12:24:07 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 12:24:07 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 12:24:07 | INFO | __main__ | Train: 8861 examples
+2026-05-22 12:24:07 | INFO | __main__ | Validation: 985 examples
+2026-05-22 12:24:07 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 12:24:12 | INFO | data.dataset | Packed 8861 examples into 1592 chunks of length 2048
+2026-05-22 12:24:13 | INFO | data.dataset | Packed 985 examples into 188 chunks of length 2048
+2026-05-22 12:24:13 | INFO | __main__ | Train batches: 1592, Val batches: 47
+2026-05-22 12:24:13 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 12:24:13 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 12:24:13 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:24:13 | INFO | accelerate.utils.modeling | We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2026-05-22 12:24:27 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 12:24:27 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 12:24:27 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 12:26:17 | INFO | __main__ | ============================================================
+2026-05-22 12:26:17 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 12:26:17 | INFO | __main__ | ============================================================
+2026-05-22 12:26:17 | INFO | __main__ | Python: 3.12.13
+2026-05-22 12:26:17 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 12:26:17 | INFO | __main__ | CUDA: 12.8
+2026-05-22 12:26:17 | INFO | __main__ | GPU count: 1
+2026-05-22 12:26:17 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 12:26:17 | INFO | __main__ | BF16 supported: True
+2026-05-22 12:26:17 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 12:26:17 | INFO | __main__ | peft: 0.18.1
+2026-05-22 12:26:18 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 12:26:18 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 12:26:18 | INFO | __main__ | ============================================================
+2026-05-22 12:26:18 | INFO | __main__ | Random seeds set to 42
+2026-05-22 12:26:18 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 12:26:18 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:26:18 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 12:26:18 | INFO | __main__ | LoRA rank: 16, alpha: 32
+2026-05-22 12:26:18 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 12:26:18 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 12:26:18 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:26:19 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 12:26:19 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 12:26:19 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 12:26:20 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 12:26:22 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 12:26:22 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 12:26:22 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 12:26:22 | INFO | __main__ | Train: 8861 examples
+2026-05-22 12:26:22 | INFO | __main__ | Validation: 985 examples
+2026-05-22 12:26:22 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 12:26:28 | INFO | data.dataset | Packed 8861 examples into 1592 chunks of length 2048
+2026-05-22 12:26:28 | INFO | data.dataset | Packed 985 examples into 188 chunks of length 2048
+2026-05-22 12:26:28 | INFO | __main__ | Train batches: 1592, Val batches: 47
+2026-05-22 12:26:28 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 12:26:28 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 12:26:28 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 12:26:29 | INFO | accelerate.utils.modeling | We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2026-05-22 12:26:42 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 12:26:42 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 12:26:42 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
