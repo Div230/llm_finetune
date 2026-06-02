@@ -266,3 +266,1591 @@
 2026-05-22 12:26:42 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
 2026-05-22 12:26:42 | INFO | __main__ | 
 [5/6] Setting up LoRA adapters...
+2026-05-22 18:55:23 | INFO | __main__ | ============================================================
+2026-05-22 18:55:23 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 18:55:23 | INFO | __main__ | ============================================================
+2026-05-22 18:55:23 | INFO | __main__ | Python: 3.12.13
+2026-05-22 18:55:23 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 18:55:23 | INFO | __main__ | CUDA: 12.8
+2026-05-22 18:55:23 | INFO | __main__ | GPU count: 1
+2026-05-22 18:55:23 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 18:55:23 | INFO | __main__ | BF16 supported: True
+2026-05-22 18:55:23 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 18:55:23 | INFO | __main__ | peft: 0.18.1
+2026-05-22 18:55:25 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 18:55:25 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 18:55:25 | INFO | __main__ | ============================================================
+2026-05-22 18:55:25 | INFO | __main__ | Random seeds set to 42
+2026-05-22 18:55:25 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 18:55:25 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 18:55:25 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 18:55:25 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-22 18:55:25 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 18:55:25 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 18:55:25 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 18:55:27 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 18:55:27 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 18:55:27 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 18:55:28 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 18:55:30 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 18:55:30 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 18:55:30 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 18:55:30 | INFO | __main__ | Train: 8861 examples
+2026-05-22 18:55:30 | INFO | __main__ | Validation: 985 examples
+2026-05-22 18:55:30 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 18:55:36 | INFO | data.dataset | Packed 8861 examples into 5357 chunks of length 512
+2026-05-22 18:55:37 | INFO | data.dataset | Packed 985 examples into 618 chunks of length 512
+2026-05-22 18:55:37 | INFO | __main__ | Train batches: 1339, Val batches: 155
+2026-05-22 18:55:37 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 18:55:37 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 18:55:37 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 18:55:38 | INFO | accelerate.utils.modeling | We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2026-05-22 18:55:56 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 18:55:56 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 18:55:56 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 18:58:16 | INFO | __main__ | ============================================================
+2026-05-22 18:58:16 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 18:58:16 | INFO | __main__ | ============================================================
+2026-05-22 18:58:16 | INFO | __main__ | Python: 3.12.13
+2026-05-22 18:58:16 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 18:58:16 | INFO | __main__ | CUDA: 12.8
+2026-05-22 18:58:16 | INFO | __main__ | GPU count: 1
+2026-05-22 18:58:16 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 18:58:16 | INFO | __main__ | BF16 supported: True
+2026-05-22 18:58:16 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 18:58:16 | INFO | __main__ | peft: 0.18.1
+2026-05-22 18:58:18 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 18:58:18 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 18:58:18 | INFO | __main__ | ============================================================
+2026-05-22 18:58:18 | INFO | __main__ | Random seeds set to 42
+2026-05-22 18:58:18 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 18:58:18 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 18:58:18 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 18:58:18 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-22 18:58:18 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 18:58:18 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 18:58:18 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 18:58:20 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 18:58:20 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 18:58:20 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 18:58:21 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 18:58:23 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 18:58:23 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 18:58:23 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 18:58:23 | INFO | __main__ | Train: 8861 examples
+2026-05-22 18:58:23 | INFO | __main__ | Validation: 985 examples
+2026-05-22 18:58:23 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 18:58:29 | INFO | data.dataset | Packed 8861 examples into 7317 chunks of length 256
+2026-05-22 18:58:30 | INFO | data.dataset | Packed 985 examples into 835 chunks of length 256
+2026-05-22 18:58:30 | INFO | __main__ | Train batches: 1829, Val batches: 209
+2026-05-22 18:58:30 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 18:58:30 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 18:58:30 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 18:58:30 | INFO | accelerate.utils.modeling | We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2026-05-22 18:58:52 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 18:58:52 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 18:58:52 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 18:59:32 | INFO | __main__ | ============================================================
+2026-05-22 18:59:32 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 18:59:32 | INFO | __main__ | ============================================================
+2026-05-22 18:59:32 | INFO | __main__ | Python: 3.12.13
+2026-05-22 18:59:32 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 18:59:32 | INFO | __main__ | CUDA: 12.8
+2026-05-22 18:59:32 | INFO | __main__ | GPU count: 1
+2026-05-22 18:59:32 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 18:59:32 | INFO | __main__ | BF16 supported: True
+2026-05-22 18:59:32 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 18:59:32 | INFO | __main__ | peft: 0.18.1
+2026-05-22 18:59:34 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 18:59:34 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 18:59:34 | INFO | __main__ | ============================================================
+2026-05-22 18:59:34 | INFO | __main__ | Random seeds set to 42
+2026-05-22 18:59:34 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 18:59:34 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 18:59:34 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 18:59:34 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-22 18:59:34 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 18:59:34 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 18:59:34 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 18:59:36 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 18:59:36 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 18:59:36 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 18:59:37 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 18:59:39 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 18:59:39 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 18:59:39 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 18:59:39 | INFO | __main__ | Train: 8861 examples
+2026-05-22 18:59:39 | INFO | __main__ | Validation: 985 examples
+2026-05-22 18:59:39 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 18:59:46 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-22 18:59:46 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-22 18:59:46 | INFO | __main__ | Train batches: 2093, Val batches: 236
+2026-05-22 18:59:46 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 18:59:46 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 18:59:46 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 18:59:47 | INFO | accelerate.utils.modeling | We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2026-05-22 19:00:04 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 19:00:04 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 19:00:04 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 19:09:17 | INFO | __main__ | ============================================================
+2026-05-22 19:09:17 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 19:09:17 | INFO | __main__ | ============================================================
+2026-05-22 19:09:17 | INFO | __main__ | Python: 3.12.13
+2026-05-22 19:09:17 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 19:09:17 | INFO | __main__ | CUDA: 12.8
+2026-05-22 19:09:17 | INFO | __main__ | GPU count: 1
+2026-05-22 19:09:17 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 19:09:17 | INFO | __main__ | BF16 supported: True
+2026-05-22 19:09:17 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 19:09:17 | INFO | __main__ | peft: 0.18.1
+2026-05-22 19:09:18 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 19:09:18 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 19:09:18 | INFO | __main__ | ============================================================
+2026-05-22 19:09:18 | INFO | __main__ | Random seeds set to 42
+2026-05-22 19:09:18 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 19:09:18 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:09:18 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:09:18 | INFO | __main__ | LoRA rank: 8, alpha: 8
+2026-05-22 19:09:18 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 19:09:18 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 19:09:18 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:09:19 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 19:09:19 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 19:09:19 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:09:21 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 19:09:23 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 19:09:23 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 19:09:23 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 19:09:23 | INFO | __main__ | Train: 8861 examples
+2026-05-22 19:09:23 | INFO | __main__ | Validation: 985 examples
+2026-05-22 19:09:23 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 19:09:28 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-22 19:09:29 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-22 19:09:29 | INFO | __main__ | Train batches: 8374, Val batches: 236
+2026-05-22 19:09:29 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 19:09:29 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 19:09:29 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:09:29 | INFO | accelerate.utils.modeling | We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2026-05-22 19:09:44 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 19:09:44 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 19:09:44 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 19:16:16 | INFO | __main__ | ============================================================
+2026-05-22 19:16:16 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 19:16:16 | INFO | __main__ | ============================================================
+2026-05-22 19:16:16 | INFO | __main__ | Python: 3.12.13
+2026-05-22 19:16:16 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 19:16:16 | INFO | __main__ | CUDA: 12.8
+2026-05-22 19:16:16 | INFO | __main__ | GPU count: 1
+2026-05-22 19:16:16 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 19:16:16 | INFO | __main__ | BF16 supported: True
+2026-05-22 19:16:16 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 19:16:16 | INFO | __main__ | peft: 0.18.1
+2026-05-22 19:16:17 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 19:16:17 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 19:16:17 | INFO | __main__ | ============================================================
+2026-05-22 19:16:17 | INFO | __main__ | Random seeds set to 42
+2026-05-22 19:16:17 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 19:16:17 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:16:17 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:16:17 | INFO | __main__ | LoRA rank: 8, alpha: 8
+2026-05-22 19:16:17 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 19:16:17 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 19:16:17 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:16:19 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 19:16:19 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 19:16:19 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:16:20 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 19:16:22 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 19:16:22 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 19:16:22 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 19:16:22 | INFO | __main__ | Train: 8861 examples
+2026-05-22 19:16:22 | INFO | __main__ | Validation: 985 examples
+2026-05-22 19:16:22 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 19:16:28 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-22 19:16:29 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-22 19:16:29 | INFO | __main__ | Train batches: 8374, Val batches: 236
+2026-05-22 19:16:29 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 19:16:29 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 19:16:29 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:16:43 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 19:16:43 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 19:16:43 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 19:19:01 | INFO | __main__ | ============================================================
+2026-05-22 19:19:01 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 19:19:01 | INFO | __main__ | ============================================================
+2026-05-22 19:19:01 | INFO | __main__ | Python: 3.12.13
+2026-05-22 19:19:01 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 19:19:01 | INFO | __main__ | CUDA: 12.8
+2026-05-22 19:19:01 | INFO | __main__ | GPU count: 1
+2026-05-22 19:19:01 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 19:19:01 | INFO | __main__ | BF16 supported: True
+2026-05-22 19:19:01 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 19:19:01 | INFO | __main__ | peft: 0.18.1
+2026-05-22 19:19:02 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 19:19:02 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 19:19:02 | INFO | __main__ | ============================================================
+2026-05-22 19:19:02 | INFO | __main__ | Random seeds set to 42
+2026-05-22 19:19:02 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 19:19:02 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:19:02 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:19:02 | INFO | __main__ | LoRA rank: 8, alpha: 8
+2026-05-22 19:19:02 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 19:19:02 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 19:19:02 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:19:04 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 19:19:04 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 19:19:04 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:19:05 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 19:19:07 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 19:19:07 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 19:19:07 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 19:19:07 | INFO | __main__ | Train: 8861 examples
+2026-05-22 19:19:07 | INFO | __main__ | Validation: 985 examples
+2026-05-22 19:19:07 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 19:19:12 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-22 19:19:13 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-22 19:19:13 | INFO | __main__ | Train batches: 8374, Val batches: 236
+2026-05-22 19:19:13 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 19:19:13 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 19:19:13 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:19:27 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 19:19:27 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 19:19:27 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 19:20:52 | INFO | __main__ | ============================================================
+2026-05-22 19:20:52 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 19:20:52 | INFO | __main__ | ============================================================
+2026-05-22 19:20:52 | INFO | __main__ | Python: 3.12.13
+2026-05-22 19:20:52 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 19:20:52 | INFO | __main__ | CUDA: 12.8
+2026-05-22 19:20:52 | INFO | __main__ | GPU count: 1
+2026-05-22 19:20:52 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 19:20:52 | INFO | __main__ | BF16 supported: True
+2026-05-22 19:20:52 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 19:20:52 | INFO | __main__ | peft: 0.18.1
+2026-05-22 19:20:53 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 19:20:53 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 19:20:53 | INFO | __main__ | ============================================================
+2026-05-22 19:20:53 | INFO | __main__ | Random seeds set to 42
+2026-05-22 19:20:53 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 19:20:53 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:20:53 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:20:53 | INFO | __main__ | LoRA rank: 8, alpha: 8
+2026-05-22 19:20:53 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 19:20:53 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 19:20:53 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:20:55 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 19:20:55 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 19:20:55 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:20:56 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 19:20:58 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 19:20:58 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 19:20:58 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 19:20:58 | INFO | __main__ | Train: 8861 examples
+2026-05-22 19:20:58 | INFO | __main__ | Validation: 985 examples
+2026-05-22 19:20:58 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 19:21:03 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-22 19:21:04 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-22 19:21:04 | INFO | __main__ | Train batches: 8374, Val batches: 236
+2026-05-22 19:21:04 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 19:21:04 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 19:21:04 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:21:18 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 19:21:18 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 19:21:18 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 19:23:24 | INFO | __main__ | ============================================================
+2026-05-22 19:23:24 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 19:23:24 | INFO | __main__ | ============================================================
+2026-05-22 19:23:24 | INFO | __main__ | Python: 3.12.13
+2026-05-22 19:23:24 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 19:23:24 | INFO | __main__ | CUDA: 12.8
+2026-05-22 19:23:24 | INFO | __main__ | GPU count: 1
+2026-05-22 19:23:24 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 19:23:24 | INFO | __main__ | BF16 supported: True
+2026-05-22 19:23:24 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 19:23:24 | INFO | __main__ | peft: 0.18.1
+2026-05-22 19:23:25 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 19:23:25 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 19:23:25 | INFO | __main__ | ============================================================
+2026-05-22 19:23:25 | INFO | __main__ | Random seeds set to 42
+2026-05-22 19:23:25 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 19:23:25 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:23:25 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:23:25 | INFO | __main__ | LoRA rank: 8, alpha: 8
+2026-05-22 19:23:25 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 19:23:25 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 19:23:25 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:23:27 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 19:23:27 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 19:23:27 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:23:28 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 19:23:30 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 19:23:30 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 19:23:30 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 19:23:30 | INFO | __main__ | Train: 8861 examples
+2026-05-22 19:23:30 | INFO | __main__ | Validation: 985 examples
+2026-05-22 19:23:30 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 19:23:35 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-22 19:23:36 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-22 19:23:36 | INFO | __main__ | Train batches: 8374, Val batches: 236
+2026-05-22 19:23:36 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 19:23:36 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 19:23:36 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:23:50 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 19:23:50 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 19:23:50 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 19:29:10 | INFO | __main__ | ============================================================
+2026-05-22 19:29:10 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 19:29:10 | INFO | __main__ | ============================================================
+2026-05-22 19:29:10 | INFO | __main__ | Python: 3.12.13
+2026-05-22 19:29:10 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 19:29:10 | INFO | __main__ | CUDA: 12.8
+2026-05-22 19:29:10 | INFO | __main__ | GPU count: 1
+2026-05-22 19:29:10 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 19:29:10 | INFO | __main__ | BF16 supported: True
+2026-05-22 19:29:10 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 19:29:10 | INFO | __main__ | peft: 0.18.1
+2026-05-22 19:29:11 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 19:29:11 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 19:29:11 | INFO | __main__ | ============================================================
+2026-05-22 19:29:11 | INFO | __main__ | Random seeds set to 42
+2026-05-22 19:29:11 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 19:29:11 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:29:11 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:29:11 | INFO | __main__ | LoRA rank: 8, alpha: 8
+2026-05-22 19:29:11 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 19:29:11 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 19:29:11 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:29:12 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 19:29:12 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 19:29:12 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:29:14 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 19:29:16 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 19:29:16 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 19:29:16 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 19:29:16 | INFO | __main__ | Train: 8861 examples
+2026-05-22 19:29:16 | INFO | __main__ | Validation: 985 examples
+2026-05-22 19:29:16 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 19:29:21 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-22 19:29:22 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-22 19:29:22 | INFO | __main__ | Train batches: 8374, Val batches: 236
+2026-05-22 19:29:22 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 19:29:22 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 19:29:22 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:29:36 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-22 19:29:36 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-22 19:29:36 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-22 19:35:22 | INFO | __main__ | ============================================================
+2026-05-22 19:35:22 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-22 19:35:22 | INFO | __main__ | ============================================================
+2026-05-22 19:35:22 | INFO | __main__ | Python: 3.12.13
+2026-05-22 19:35:22 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-22 19:35:22 | INFO | __main__ | CUDA: 12.8
+2026-05-22 19:35:22 | INFO | __main__ | GPU count: 1
+2026-05-22 19:35:22 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-22 19:35:22 | INFO | __main__ | BF16 supported: True
+2026-05-22 19:35:22 | INFO | __main__ | transformers: 4.57.3
+2026-05-22 19:35:22 | INFO | __main__ | peft: 0.18.1
+2026-05-22 19:35:23 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-22 19:35:23 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-22 19:35:23 | INFO | __main__ | ============================================================
+2026-05-22 19:35:23 | INFO | __main__ | Random seeds set to 42
+2026-05-22 19:35:23 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-22 19:35:23 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:35:23 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:35:23 | INFO | __main__ | LoRA rank: 8, alpha: 8
+2026-05-22 19:35:23 | INFO | __main__ | Output dir: ./outputs
+2026-05-22 19:35:23 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-22 19:35:23 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-22 19:35:24 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-22 19:35:24 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-22 19:35:24 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-22 19:35:26 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-22 19:35:28 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-22 19:35:28 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-22 19:35:28 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-22 19:35:28 | INFO | __main__ | Train: 8861 examples
+2026-05-22 19:35:28 | INFO | __main__ | Validation: 985 examples
+2026-05-22 19:35:28 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-22 19:35:33 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-22 19:35:34 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-22 19:35:34 | INFO | __main__ | Train batches: 8374, Val batches: 236
+2026-05-22 19:35:34 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-22 19:35:34 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-22 19:35:34 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-31 09:56:04 | INFO | __main__ | ============================================================
+2026-05-31 09:56:04 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-31 09:56:04 | INFO | __main__ | ============================================================
+2026-05-31 09:56:04 | INFO | __main__ | Python: 3.12.13
+2026-05-31 09:56:04 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-31 09:56:04 | INFO | __main__ | CUDA: 12.8
+2026-05-31 09:56:04 | INFO | __main__ | GPU count: 1
+2026-05-31 09:56:04 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-31 09:56:04 | INFO | __main__ | BF16 supported: True
+2026-05-31 09:56:04 | INFO | __main__ | transformers: 4.57.3
+2026-05-31 09:56:04 | INFO | __main__ | peft: 0.18.1
+2026-05-31 09:56:05 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-31 09:56:05 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-31 09:56:05 | INFO | __main__ | ============================================================
+2026-05-31 09:56:05 | INFO | __main__ | Random seeds set to 42
+2026-05-31 09:56:05 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-31 09:56:05 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-31 09:56:05 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-31 09:56:05 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-31 09:56:05 | INFO | __main__ | Output dir: ./outputs
+2026-05-31 09:56:05 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-31 09:56:05 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-31 09:56:06 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-31 09:56:06 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-31 09:56:06 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-31 09:56:08 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-31 09:56:10 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-31 09:56:10 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-31 09:56:10 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-31 09:56:10 | INFO | __main__ | Train: 8861 examples
+2026-05-31 09:56:10 | INFO | __main__ | Validation: 985 examples
+2026-05-31 09:56:10 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-31 09:56:16 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-31 09:56:16 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-31 09:56:16 | INFO | __main__ | Train batches: 2093, Val batches: 236
+2026-05-31 09:56:16 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-31 09:56:16 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-31 09:56:16 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-31 09:57:31 | INFO | __main__ | ============================================================
+2026-05-31 09:57:31 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-31 09:57:31 | INFO | __main__ | ============================================================
+2026-05-31 09:57:31 | INFO | __main__ | Python: 3.12.13
+2026-05-31 09:57:31 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-31 09:57:31 | INFO | __main__ | CUDA: 12.8
+2026-05-31 09:57:31 | INFO | __main__ | GPU count: 1
+2026-05-31 09:57:31 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-31 09:57:31 | INFO | __main__ | BF16 supported: True
+2026-05-31 09:57:31 | INFO | __main__ | transformers: 4.57.3
+2026-05-31 09:57:31 | INFO | __main__ | peft: 0.18.1
+2026-05-31 09:57:31 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-31 09:57:31 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-31 09:57:31 | INFO | __main__ | ============================================================
+2026-05-31 09:57:31 | INFO | __main__ | Random seeds set to 42
+2026-05-31 09:57:31 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-31 09:57:31 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-31 09:57:31 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-31 09:57:31 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-31 09:57:31 | INFO | __main__ | Output dir: ./outputs
+2026-05-31 09:57:31 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-31 09:57:31 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-31 09:57:33 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-31 09:57:33 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-31 09:57:33 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-31 09:57:34 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-31 09:57:36 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-31 09:57:36 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-31 09:57:36 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-31 09:57:36 | INFO | __main__ | Train: 8861 examples
+2026-05-31 09:57:36 | INFO | __main__ | Validation: 985 examples
+2026-05-31 09:57:36 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-31 09:57:42 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-31 09:57:42 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-31 09:57:42 | INFO | __main__ | Train batches: 2093, Val batches: 236
+2026-05-31 09:57:42 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-31 09:57:42 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-31 09:57:42 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-31 10:02:08 | INFO | __main__ | ============================================================
+2026-05-31 10:02:08 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-31 10:02:08 | INFO | __main__ | ============================================================
+2026-05-31 10:02:08 | INFO | __main__ | Python: 3.12.13
+2026-05-31 10:02:08 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-31 10:02:08 | INFO | __main__ | CUDA: 12.8
+2026-05-31 10:02:08 | INFO | __main__ | GPU count: 1
+2026-05-31 10:02:08 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-31 10:02:08 | INFO | __main__ | BF16 supported: True
+2026-05-31 10:02:08 | INFO | __main__ | transformers: 4.57.3
+2026-05-31 10:02:08 | INFO | __main__ | peft: 0.18.1
+2026-05-31 10:02:09 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-31 10:02:09 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-31 10:02:09 | INFO | __main__ | ============================================================
+2026-05-31 10:02:09 | INFO | __main__ | Random seeds set to 42
+2026-05-31 10:02:09 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-31 10:02:09 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-31 10:02:09 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-31 10:02:09 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-31 10:02:09 | INFO | __main__ | Output dir: ./outputs
+2026-05-31 10:02:09 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-31 10:02:09 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-31 10:02:10 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-31 10:02:10 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-31 10:02:10 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-31 10:02:12 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-31 10:02:14 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-31 10:02:14 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-31 10:02:14 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-31 10:02:14 | INFO | __main__ | Train: 8861 examples
+2026-05-31 10:02:14 | INFO | __main__ | Validation: 985 examples
+2026-05-31 10:02:14 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-31 10:02:19 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-31 10:02:20 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-31 10:02:20 | INFO | __main__ | Train batches: 2093, Val batches: 236
+2026-05-31 10:02:20 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-31 10:02:20 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-31 10:02:20 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-31 10:02:34 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-31 10:02:34 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-31 10:02:34 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-31 10:03:22 | INFO | __main__ | ============================================================
+2026-05-31 10:03:22 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-31 10:03:22 | INFO | __main__ | ============================================================
+2026-05-31 10:03:22 | INFO | __main__ | Python: 3.12.13
+2026-05-31 10:03:22 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-31 10:03:22 | INFO | __main__ | CUDA: 12.8
+2026-05-31 10:03:22 | INFO | __main__ | GPU count: 1
+2026-05-31 10:03:22 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-31 10:03:22 | INFO | __main__ | BF16 supported: True
+2026-05-31 10:03:22 | INFO | __main__ | transformers: 4.57.3
+2026-05-31 10:03:22 | INFO | __main__ | peft: 0.18.1
+2026-05-31 10:03:24 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-31 10:03:24 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-31 10:03:24 | INFO | __main__ | ============================================================
+2026-05-31 10:03:24 | INFO | __main__ | Random seeds set to 42
+2026-05-31 10:03:24 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-31 10:03:24 | INFO | __main__ | Model: Qwen/Qwen2-7B-Instruct
+2026-05-31 10:03:24 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-31 10:03:24 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-31 10:03:24 | INFO | __main__ | Output dir: ./outputs
+2026-05-31 10:03:24 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-31 10:03:24 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-7B-Instruct
+2026-05-31 10:03:25 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-31 10:03:25 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-31 10:03:25 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-31 10:03:26 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-31 10:03:28 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-31 10:03:28 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-31 10:03:28 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-31 10:03:28 | INFO | __main__ | Train: 8861 examples
+2026-05-31 10:03:28 | INFO | __main__ | Validation: 985 examples
+2026-05-31 10:03:28 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-31 10:03:34 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-31 10:03:34 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-31 10:03:34 | INFO | __main__ | Train batches: 2093, Val batches: 236
+2026-05-31 10:03:34 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-31 10:03:34 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-31 10:03:34 | INFO | models.model_loader | Loading model: Qwen/Qwen2-7B-Instruct
+2026-05-31 10:03:47 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-31 10:03:47 | INFO | models.model_loader | Estimated model weight memory: 3.55 GB
+2026-05-31 10:03:47 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-31 10:47:45 | INFO | __main__ | ============================================================
+2026-05-31 10:47:45 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-31 10:47:45 | INFO | __main__ | ============================================================
+2026-05-31 10:47:45 | INFO | __main__ | Python: 3.12.13
+2026-05-31 10:47:45 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-31 10:47:45 | INFO | __main__ | CUDA: 12.8
+2026-05-31 10:47:45 | INFO | __main__ | GPU count: 1
+2026-05-31 10:47:45 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-31 10:47:45 | INFO | __main__ | BF16 supported: True
+2026-05-31 10:47:45 | INFO | __main__ | transformers: 4.57.3
+2026-05-31 10:47:45 | INFO | __main__ | peft: 0.18.1
+2026-05-31 10:47:46 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-31 10:47:46 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-31 10:47:46 | INFO | __main__ | ============================================================
+2026-05-31 10:47:46 | INFO | __main__ | Random seeds set to 42
+2026-05-31 10:47:46 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-31 10:47:46 | INFO | __main__ | Model: Qwen/Qwen2-1.5B-Instruct
+2026-05-31 10:47:46 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-31 10:47:46 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-31 10:47:46 | INFO | __main__ | Output dir: ./outputs
+2026-05-31 10:47:46 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-31 10:47:46 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-1.5B-Instruct
+2026-05-31 10:47:53 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-31 10:47:53 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-31 10:47:53 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-31 10:47:54 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-31 10:47:56 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-31 10:47:56 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-31 10:47:56 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-31 10:47:56 | INFO | __main__ | Train: 8861 examples
+2026-05-31 10:47:56 | INFO | __main__ | Validation: 985 examples
+2026-05-31 10:47:56 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-31 10:48:01 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-31 10:48:02 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-31 10:48:02 | INFO | __main__ | Train batches: 2093, Val batches: 236
+2026-05-31 10:48:02 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-31 10:48:02 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-31 10:48:02 | INFO | models.model_loader | Loading model: Qwen/Qwen2-1.5B-Instruct
+2026-05-31 10:51:09 | INFO | __main__ | ============================================================
+2026-05-31 10:51:09 | INFO | __main__ | SYSTEM INFORMATION
+2026-05-31 10:51:09 | INFO | __main__ | ============================================================
+2026-05-31 10:51:09 | INFO | __main__ | Python: 3.12.13
+2026-05-31 10:51:09 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-05-31 10:51:09 | INFO | __main__ | CUDA: 12.8
+2026-05-31 10:51:09 | INFO | __main__ | GPU count: 1
+2026-05-31 10:51:09 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-05-31 10:51:09 | INFO | __main__ | BF16 supported: True
+2026-05-31 10:51:09 | INFO | __main__ | transformers: 4.57.3
+2026-05-31 10:51:09 | INFO | __main__ | peft: 0.18.1
+2026-05-31 10:51:10 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-05-31 10:51:10 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-05-31 10:51:10 | INFO | __main__ | ============================================================
+2026-05-31 10:51:10 | INFO | __main__ | Random seeds set to 42
+2026-05-31 10:51:10 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-05-31 10:51:10 | INFO | __main__ | Model: Qwen/Qwen2-1.5B-Instruct
+2026-05-31 10:51:10 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-05-31 10:51:10 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-05-31 10:51:10 | INFO | __main__ | Output dir: ./outputs
+2026-05-31 10:51:10 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-05-31 10:51:10 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-1.5B-Instruct
+2026-05-31 10:51:16 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-05-31 10:51:16 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-05-31 10:51:16 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-05-31 10:51:18 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-05-31 10:51:20 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-05-31 10:51:20 | INFO | data.dataset | Auto-detected template: chatml
+2026-05-31 10:51:20 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-05-31 10:51:20 | INFO | __main__ | Train: 8861 examples
+2026-05-31 10:51:20 | INFO | __main__ | Validation: 985 examples
+2026-05-31 10:51:20 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-05-31 10:51:26 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-05-31 10:51:27 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-05-31 10:51:27 | INFO | __main__ | Train batches: 2093, Val batches: 236
+2026-05-31 10:51:27 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-05-31 10:51:27 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-05-31 10:51:27 | INFO | models.model_loader | Loading model: Qwen/Qwen2-1.5B-Instruct
+2026-05-31 10:53:17 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-05-31 10:53:17 | INFO | models.model_loader | Estimated model weight memory: 0.74 GB
+2026-05-31 10:53:17 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-05-31 10:53:17 | INFO | models.model_loader | LoRA target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+2026-05-31 10:53:17 | INFO | models.model_loader | All params: 892,974,592 | Trainable: 4,358,144 | Trainable%: 0.49%
+2026-05-31 10:53:17 | INFO | __main__ | 
+[6/6] Starting training...
+2026-05-31 10:53:17 | INFO | training.trainer | Training steps per epoch: 524, Total training steps: 1572
+2026-05-31 10:53:17 | INFO | training.trainer | Optimizer: paged_adamw_8bit, Scheduler: cosine, Warmup steps: 47/1572
+2026-05-31 10:53:31 | INFO | training.trainer | WandB initialized: https://wandb.ai/div230-manipal-university-jaipur/llm-finetune/runs/flojjda0
+2026-05-31 10:53:31 | INFO | training.trainer | ============================================================
+2026-05-31 10:53:31 | INFO | training.trainer | STARTING TRAINING
+2026-05-31 10:53:31 | INFO | training.trainer | ============================================================
+2026-05-31 10:53:31 | INFO | training.trainer |   Epochs: 3
+2026-05-31 10:53:31 | INFO | training.trainer |   Steps per epoch: 524
+2026-05-31 10:53:31 | INFO | training.trainer |   Total steps: 1572
+2026-05-31 10:53:31 | INFO | training.trainer |   Effective batch size: 16
+2026-05-31 10:53:31 | INFO | training.trainer | ============================================================
+2026-05-31 10:53:48 | INFO | training.trainer | Step 10/1572 | Loss: 2.6300 | LR: 4.26e-05 | Tokens/s: 1267 | GPU: 2.0GB
+2026-05-31 10:54:05 | INFO | training.trainer | Step 20/1572 | Loss: 2.5877 | LR: 8.51e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 10:54:22 | INFO | training.trainer | Step 30/1572 | Loss: 2.3860 | LR: 1.28e-04 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 10:54:39 | INFO | training.trainer | Step 40/1572 | Loss: 2.2879 | LR: 1.70e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 10:54:56 | INFO | training.trainer | Step 50/1572 | Loss: 2.1790 | LR: 2.00e-04 | Tokens/s: 1289 | GPU: 2.0GB
+2026-05-31 10:55:12 | INFO | training.trainer | Step 60/1572 | Loss: 2.2172 | LR: 2.00e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:55:29 | INFO | training.trainer | Step 70/1572 | Loss: 2.1235 | LR: 2.00e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:55:46 | INFO | training.trainer | Step 80/1572 | Loss: 2.1295 | LR: 2.00e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:56:03 | INFO | training.trainer | Step 90/1572 | Loss: 2.1798 | LR: 2.00e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:56:20 | INFO | training.trainer | Step 100/1572 | Loss: 2.1988 | LR: 1.99e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:56:20 | INFO | training.trainer | Running evaluation at step 100...
+2026-05-31 10:56:46 | INFO | training.trainer | Validation - Loss: 2.1105 | Perplexity: 8.25
+2026-05-31 10:56:47 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 10:56:47 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 10:56:47 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 10:56:47 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 10:56:47 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 10:56:47 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 10:56:47 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 100)
+2026-05-31 10:56:47 | INFO | training.trainer | New best model saved! val_loss=2.1105
+2026-05-31 10:56:48 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step100/training_state
+2026-05-31 10:56:48 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step100/training_state/optimizer.bin
+2026-05-31 10:56:48 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step100/training_state/scheduler.bin
+2026-05-31 10:56:48 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step100/training_state/sampler.bin
+2026-05-31 10:56:48 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step100/training_state/sampler_1.bin
+2026-05-31 10:56:48 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step100/training_state/random_states_0.pkl
+2026-05-31 10:56:48 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step100 (step 100)
+2026-05-31 10:57:05 | INFO | training.trainer | Step 110/1572 | Loss: 2.1016 | LR: 1.99e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:57:22 | INFO | training.trainer | Step 120/1572 | Loss: 2.1656 | LR: 1.99e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 10:57:39 | INFO | training.trainer | Step 130/1572 | Loss: 2.2001 | LR: 1.99e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:57:55 | INFO | training.trainer | Step 140/1572 | Loss: 2.1331 | LR: 1.98e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:58:12 | INFO | training.trainer | Step 150/1572 | Loss: 2.0583 | LR: 1.98e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 10:58:29 | INFO | training.trainer | Step 160/1572 | Loss: 2.0635 | LR: 1.97e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 10:58:46 | INFO | training.trainer | Step 170/1572 | Loss: 2.1392 | LR: 1.97e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:59:03 | INFO | training.trainer | Step 180/1572 | Loss: 2.1157 | LR: 1.96e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:59:20 | INFO | training.trainer | Step 190/1572 | Loss: 2.1527 | LR: 1.96e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 10:59:37 | INFO | training.trainer | Step 200/1572 | Loss: 2.1146 | LR: 1.95e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 10:59:37 | INFO | training.trainer | Running evaluation at step 200...
+2026-05-31 11:00:01 | INFO | training.trainer | Validation - Loss: 2.0601 | Perplexity: 7.85
+2026-05-31 11:00:02 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:00:02 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:00:02 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:00:02 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:00:02 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:00:02 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:00:02 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 200)
+2026-05-31 11:00:02 | INFO | training.trainer | New best model saved! val_loss=2.0601
+2026-05-31 11:00:03 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step200/training_state
+2026-05-31 11:00:03 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step200/training_state/optimizer.bin
+2026-05-31 11:00:03 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step200/training_state/scheduler.bin
+2026-05-31 11:00:03 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step200/training_state/sampler.bin
+2026-05-31 11:00:03 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step200/training_state/sampler_1.bin
+2026-05-31 11:00:03 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step200/training_state/random_states_0.pkl
+2026-05-31 11:00:03 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step200 (step 200)
+2026-05-31 11:00:20 | INFO | training.trainer | Step 210/1572 | Loss: 2.1207 | LR: 1.94e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:00:37 | INFO | training.trainer | Step 220/1572 | Loss: 2.0492 | LR: 1.94e-04 | Tokens/s: 1289 | GPU: 2.0GB
+2026-05-31 11:00:54 | INFO | training.trainer | Step 230/1572 | Loss: 2.0905 | LR: 1.93e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:01:10 | INFO | training.trainer | Step 240/1572 | Loss: 2.1743 | LR: 1.92e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:01:27 | INFO | training.trainer | Step 250/1572 | Loss: 2.0294 | LR: 1.91e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:01:44 | INFO | training.trainer | Step 260/1572 | Loss: 2.0886 | LR: 1.91e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:02:01 | INFO | training.trainer | Step 270/1572 | Loss: 2.0369 | LR: 1.90e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:02:18 | INFO | training.trainer | Step 280/1572 | Loss: 2.0710 | LR: 1.89e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:02:35 | INFO | training.trainer | Step 290/1572 | Loss: 2.0465 | LR: 1.88e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:02:52 | INFO | training.trainer | Step 300/1572 | Loss: 2.1032 | LR: 1.87e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:02:52 | INFO | training.trainer | Running evaluation at step 300...
+2026-05-31 11:03:18 | INFO | training.trainer | Validation - Loss: 2.0339 | Perplexity: 7.64
+2026-05-31 11:03:19 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:03:19 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 300)
+2026-05-31 11:03:19 | INFO | training.trainer | New best model saved! val_loss=2.0339
+2026-05-31 11:03:19 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step300/training_state
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step300/training_state/optimizer.bin
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step300/training_state/scheduler.bin
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step300/training_state/sampler.bin
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step300/training_state/sampler_1.bin
+2026-05-31 11:03:19 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step300/training_state/random_states_0.pkl
+2026-05-31 11:03:19 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step300 (step 300)
+2026-05-31 11:03:36 | INFO | training.trainer | Step 310/1572 | Loss: 2.1656 | LR: 1.86e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:03:53 | INFO | training.trainer | Step 320/1572 | Loss: 2.0195 | LR: 1.85e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:04:10 | INFO | training.trainer | Step 330/1572 | Loss: 2.0379 | LR: 1.83e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:04:27 | INFO | training.trainer | Step 340/1572 | Loss: 2.0440 | LR: 1.82e-04 | Tokens/s: 1283 | GPU: 2.0GB
+2026-05-31 11:04:44 | INFO | training.trainer | Step 350/1572 | Loss: 2.0680 | LR: 1.81e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:05:01 | INFO | training.trainer | Step 360/1572 | Loss: 2.1495 | LR: 1.80e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:05:18 | INFO | training.trainer | Step 370/1572 | Loss: 2.0072 | LR: 1.79e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:05:35 | INFO | training.trainer | Step 380/1572 | Loss: 2.0590 | LR: 1.77e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:05:52 | INFO | training.trainer | Step 390/1572 | Loss: 2.0343 | LR: 1.76e-04 | Tokens/s: 1289 | GPU: 2.0GB
+2026-05-31 11:06:09 | INFO | training.trainer | Step 400/1572 | Loss: 2.0360 | LR: 1.75e-04 | Tokens/s: 1289 | GPU: 2.0GB
+2026-05-31 11:06:09 | INFO | training.trainer | Running evaluation at step 400...
+2026-05-31 11:06:40 | INFO | training.trainer | Validation - Loss: 2.0216 | Perplexity: 7.55
+2026-05-31 11:06:41 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:06:41 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:06:41 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:06:41 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:06:41 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:06:41 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:06:41 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 400)
+2026-05-31 11:06:41 | INFO | training.trainer | New best model saved! val_loss=2.0216
+2026-05-31 11:06:42 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step400/training_state
+2026-05-31 11:06:42 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step400/training_state/optimizer.bin
+2026-05-31 11:06:42 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step400/training_state/scheduler.bin
+2026-05-31 11:06:42 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step400/training_state/sampler.bin
+2026-05-31 11:06:42 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step400/training_state/sampler_1.bin
+2026-05-31 11:06:42 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step400/training_state/random_states_0.pkl
+2026-05-31 11:06:42 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step400 (step 400)
+2026-05-31 11:06:42 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step100
+2026-05-31 11:06:58 | INFO | training.trainer | Step 410/1572 | Loss: 2.0702 | LR: 1.73e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:07:15 | INFO | training.trainer | Step 420/1572 | Loss: 2.0058 | LR: 1.72e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:07:32 | INFO | training.trainer | Step 430/1572 | Loss: 2.0578 | LR: 1.70e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:07:49 | INFO | training.trainer | Step 440/1572 | Loss: 1.9910 | LR: 1.69e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:08:06 | INFO | training.trainer | Step 450/1572 | Loss: 2.0078 | LR: 1.67e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:08:23 | INFO | training.trainer | Step 460/1572 | Loss: 2.0214 | LR: 1.66e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:08:40 | INFO | training.trainer | Step 470/1572 | Loss: 1.9684 | LR: 1.64e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:08:57 | INFO | training.trainer | Step 480/1572 | Loss: 2.0868 | LR: 1.63e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:09:14 | INFO | training.trainer | Step 490/1572 | Loss: 2.1529 | LR: 1.61e-04 | Tokens/s: 1284 | GPU: 2.0GB
+2026-05-31 11:09:31 | INFO | training.trainer | Step 500/1572 | Loss: 2.0380 | LR: 1.60e-04 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:09:31 | INFO | training.trainer | Running evaluation at step 500...
+2026-05-31 11:10:03 | INFO | training.trainer | Validation - Loss: 2.0148 | Perplexity: 7.50
+2026-05-31 11:10:04 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:10:04 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:10:04 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:10:04 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:10:04 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:10:04 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:10:04 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 500)
+2026-05-31 11:10:04 | INFO | training.trainer | New best model saved! val_loss=2.0148
+2026-05-31 11:10:05 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step500/training_state
+2026-05-31 11:10:05 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step500/training_state/optimizer.bin
+2026-05-31 11:10:05 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step500/training_state/scheduler.bin
+2026-05-31 11:10:05 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step500/training_state/sampler.bin
+2026-05-31 11:10:05 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step500/training_state/sampler_1.bin
+2026-05-31 11:10:05 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step500/training_state/random_states_0.pkl
+2026-05-31 11:10:05 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step500 (step 500)
+2026-05-31 11:10:05 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step200
+2026-05-31 11:10:22 | INFO | training.trainer | Step 510/1572 | Loss: 2.0446 | LR: 1.58e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:10:39 | INFO | training.trainer | Step 520/1572 | Loss: 2.0783 | LR: 1.56e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:10:44 | INFO | training.trainer | Epoch 1/3 complete | Avg Loss: 2.1171 | Time: 1034s
+2026-05-31 11:10:56 | INFO | training.trainer | Step 530/1572 | Loss: 2.0514 | LR: 1.54e-04 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:11:13 | INFO | training.trainer | Step 540/1572 | Loss: 1.9383 | LR: 1.53e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:11:30 | INFO | training.trainer | Step 550/1572 | Loss: 1.9339 | LR: 1.51e-04 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:11:47 | INFO | training.trainer | Step 560/1572 | Loss: 2.0142 | LR: 1.49e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:12:03 | INFO | training.trainer | Step 570/1572 | Loss: 2.0968 | LR: 1.47e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:12:20 | INFO | training.trainer | Step 580/1572 | Loss: 1.9580 | LR: 1.46e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:12:37 | INFO | training.trainer | Step 590/1572 | Loss: 1.9953 | LR: 1.44e-04 | Tokens/s: 1284 | GPU: 2.0GB
+2026-05-31 11:12:54 | INFO | training.trainer | Step 600/1572 | Loss: 1.9227 | LR: 1.42e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:12:54 | INFO | training.trainer | Running evaluation at step 600...
+2026-05-31 11:13:23 | INFO | training.trainer | Validation - Loss: 2.0111 | Perplexity: 7.47
+2026-05-31 11:13:23 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:13:23 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:13:23 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:13:23 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:13:23 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:13:23 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:13:23 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 600)
+2026-05-31 11:13:23 | INFO | training.trainer | New best model saved! val_loss=2.0111
+2026-05-31 11:13:24 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step600/training_state
+2026-05-31 11:13:24 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step600/training_state/optimizer.bin
+2026-05-31 11:13:24 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step600/training_state/scheduler.bin
+2026-05-31 11:13:24 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step600/training_state/sampler.bin
+2026-05-31 11:13:24 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step600/training_state/sampler_1.bin
+2026-05-31 11:13:24 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step600/training_state/random_states_0.pkl
+2026-05-31 11:13:24 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step600 (step 600)
+2026-05-31 11:13:24 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step300
+2026-05-31 11:13:41 | INFO | training.trainer | Step 610/1572 | Loss: 2.0600 | LR: 1.40e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:13:58 | INFO | training.trainer | Step 620/1572 | Loss: 2.0022 | LR: 1.38e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:14:15 | INFO | training.trainer | Step 630/1572 | Loss: 1.9490 | LR: 1.36e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:14:32 | INFO | training.trainer | Step 640/1572 | Loss: 2.0457 | LR: 1.34e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:14:49 | INFO | training.trainer | Step 650/1572 | Loss: 2.0206 | LR: 1.32e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:15:06 | INFO | training.trainer | Step 660/1572 | Loss: 2.0596 | LR: 1.30e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:15:22 | INFO | training.trainer | Step 670/1572 | Loss: 2.0104 | LR: 1.28e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:15:39 | INFO | training.trainer | Step 680/1572 | Loss: 1.9957 | LR: 1.26e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:15:56 | INFO | training.trainer | Step 690/1572 | Loss: 2.0120 | LR: 1.24e-04 | Tokens/s: 1289 | GPU: 2.0GB
+2026-05-31 11:16:13 | INFO | training.trainer | Step 700/1572 | Loss: 1.9718 | LR: 1.22e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:16:13 | INFO | training.trainer | Running evaluation at step 700...
+2026-05-31 11:16:42 | INFO | training.trainer | Validation - Loss: 2.0062 | Perplexity: 7.44
+2026-05-31 11:16:43 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:16:43 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:16:43 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:16:43 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:16:43 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:16:43 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:16:43 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 700)
+2026-05-31 11:16:43 | INFO | training.trainer | New best model saved! val_loss=2.0062
+2026-05-31 11:16:44 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step700/training_state
+2026-05-31 11:16:44 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step700/training_state/optimizer.bin
+2026-05-31 11:16:44 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step700/training_state/scheduler.bin
+2026-05-31 11:16:44 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step700/training_state/sampler.bin
+2026-05-31 11:16:44 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step700/training_state/sampler_1.bin
+2026-05-31 11:16:44 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step700/training_state/random_states_0.pkl
+2026-05-31 11:16:44 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step700 (step 700)
+2026-05-31 11:16:44 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step400
+2026-05-31 11:17:01 | INFO | training.trainer | Step 710/1572 | Loss: 2.0367 | LR: 1.20e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:17:18 | INFO | training.trainer | Step 720/1572 | Loss: 2.0934 | LR: 1.18e-04 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:17:35 | INFO | training.trainer | Step 730/1572 | Loss: 2.0007 | LR: 1.16e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:17:52 | INFO | training.trainer | Step 740/1572 | Loss: 1.9806 | LR: 1.14e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:18:09 | INFO | training.trainer | Step 750/1572 | Loss: 2.0437 | LR: 1.12e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:18:26 | INFO | training.trainer | Step 760/1572 | Loss: 1.9782 | LR: 1.10e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:18:43 | INFO | training.trainer | Step 770/1572 | Loss: 1.9495 | LR: 1.08e-04 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:19:00 | INFO | training.trainer | Step 780/1572 | Loss: 1.9734 | LR: 1.06e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:19:17 | INFO | training.trainer | Step 790/1572 | Loss: 1.9634 | LR: 1.04e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:19:34 | INFO | training.trainer | Step 800/1572 | Loss: 1.9828 | LR: 1.02e-04 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:19:34 | INFO | training.trainer | Running evaluation at step 800...
+2026-05-31 11:20:02 | INFO | training.trainer | Validation - Loss: 2.0040 | Perplexity: 7.42
+2026-05-31 11:20:02 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:20:02 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:20:02 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:20:02 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:20:02 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:20:02 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:20:02 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 800)
+2026-05-31 11:20:02 | INFO | training.trainer | New best model saved! val_loss=2.0040
+2026-05-31 11:20:03 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step800/training_state
+2026-05-31 11:20:03 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step800/training_state/optimizer.bin
+2026-05-31 11:20:03 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step800/training_state/scheduler.bin
+2026-05-31 11:20:03 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step800/training_state/sampler.bin
+2026-05-31 11:20:03 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step800/training_state/sampler_1.bin
+2026-05-31 11:20:03 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step800/training_state/random_states_0.pkl
+2026-05-31 11:20:03 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step800 (step 800)
+2026-05-31 11:20:03 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step500
+2026-05-31 11:20:20 | INFO | training.trainer | Step 810/1572 | Loss: 1.9744 | LR: 9.99e-05 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:20:37 | INFO | training.trainer | Step 820/1572 | Loss: 1.9078 | LR: 9.78e-05 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:20:54 | INFO | training.trainer | Step 830/1572 | Loss: 1.9900 | LR: 9.58e-05 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:21:11 | INFO | training.trainer | Step 840/1572 | Loss: 2.0037 | LR: 9.37e-05 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:21:28 | INFO | training.trainer | Step 850/1572 | Loss: 2.0586 | LR: 9.17e-05 | Tokens/s: 1285 | GPU: 2.0GB
+2026-05-31 11:21:45 | INFO | training.trainer | Step 860/1572 | Loss: 1.9874 | LR: 8.96e-05 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:22:02 | INFO | training.trainer | Step 870/1572 | Loss: 1.9996 | LR: 8.76e-05 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:22:19 | INFO | training.trainer | Step 880/1572 | Loss: 1.9302 | LR: 8.55e-05 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:22:35 | INFO | training.trainer | Step 890/1572 | Loss: 2.0668 | LR: 8.35e-05 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:22:52 | INFO | training.trainer | Step 900/1572 | Loss: 1.9768 | LR: 8.15e-05 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:22:52 | INFO | training.trainer | Running evaluation at step 900...
+2026-05-31 11:23:22 | INFO | training.trainer | Validation - Loss: 2.0013 | Perplexity: 7.40
+2026-05-31 11:23:23 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:23:23 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 900)
+2026-05-31 11:23:23 | INFO | training.trainer | New best model saved! val_loss=2.0013
+2026-05-31 11:23:23 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step900/training_state
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step900/training_state/optimizer.bin
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step900/training_state/scheduler.bin
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step900/training_state/sampler.bin
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step900/training_state/sampler_1.bin
+2026-05-31 11:23:23 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step900/training_state/random_states_0.pkl
+2026-05-31 11:23:23 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step900 (step 900)
+2026-05-31 11:23:23 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step600
+2026-05-31 11:23:40 | INFO | training.trainer | Step 910/1572 | Loss: 1.9734 | LR: 7.94e-05 | Tokens/s: 1291 | GPU: 2.0GB
+2026-05-31 11:23:57 | INFO | training.trainer | Step 920/1572 | Loss: 2.0575 | LR: 7.74e-05 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:24:14 | INFO | training.trainer | Step 930/1572 | Loss: 1.9827 | LR: 7.54e-05 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:24:31 | INFO | training.trainer | Step 940/1572 | Loss: 1.9901 | LR: 7.34e-05 | Tokens/s: 1290 | GPU: 2.0GB
+2026-05-31 11:24:48 | INFO | training.trainer | Step 950/1572 | Loss: 2.0704 | LR: 7.15e-05 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:25:05 | INFO | training.trainer | Step 960/1572 | Loss: 1.9908 | LR: 6.95e-05 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:25:22 | INFO | training.trainer | Step 970/1572 | Loss: 1.9737 | LR: 6.75e-05 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:25:39 | INFO | training.trainer | Step 980/1572 | Loss: 2.0257 | LR: 6.56e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:25:56 | INFO | training.trainer | Step 990/1572 | Loss: 2.0174 | LR: 6.37e-05 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:26:12 | INFO | training.trainer | Step 1000/1572 | Loss: 1.9540 | LR: 6.18e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:26:12 | INFO | training.trainer | Running evaluation at step 1000...
+2026-05-31 11:26:42 | INFO | training.trainer | Validation - Loss: 1.9989 | Perplexity: 7.38
+2026-05-31 11:26:43 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:26:43 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 1000)
+2026-05-31 11:26:43 | INFO | training.trainer | New best model saved! val_loss=1.9989
+2026-05-31 11:26:43 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step1000/training_state
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step1000/training_state/optimizer.bin
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step1000/training_state/scheduler.bin
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step1000/training_state/sampler.bin
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step1000/training_state/sampler_1.bin
+2026-05-31 11:26:43 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step1000/training_state/random_states_0.pkl
+2026-05-31 11:26:43 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step1000 (step 1000)
+2026-05-31 11:26:43 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step700
+2026-05-31 11:27:00 | INFO | training.trainer | Step 1010/1572 | Loss: 1.9139 | LR: 5.99e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:27:17 | INFO | training.trainer | Step 1020/1572 | Loss: 2.0224 | LR: 5.80e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:27:34 | INFO | training.trainer | Step 1030/1572 | Loss: 2.0030 | LR: 5.61e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:27:51 | INFO | training.trainer | Step 1040/1572 | Loss: 2.0964 | LR: 5.43e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:28:02 | INFO | training.trainer | Epoch 2/3 complete | Avg Loss: 1.9999 | Time: 1037s
+2026-05-31 11:28:08 | INFO | training.trainer | Step 1050/1572 | Loss: 2.0235 | LR: 5.25e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:28:25 | INFO | training.trainer | Step 1060/1572 | Loss: 2.0001 | LR: 5.07e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:28:42 | INFO | training.trainer | Step 1070/1572 | Loss: 1.8825 | LR: 4.89e-05 | Tokens/s: 1287 | GPU: 2.0GB
+2026-05-31 11:28:58 | INFO | training.trainer | Step 1080/1572 | Loss: 1.9684 | LR: 4.71e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:29:15 | INFO | training.trainer | Step 1090/1572 | Loss: 1.9334 | LR: 4.54e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:29:32 | INFO | training.trainer | Step 1100/1572 | Loss: 1.9776 | LR: 4.37e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:29:32 | INFO | training.trainer | Running evaluation at step 1100...
+2026-05-31 11:30:01 | INFO | training.trainer | Validation - Loss: 1.9987 | Perplexity: 7.38
+2026-05-31 11:30:02 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:30:02 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:30:02 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:30:02 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:30:02 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:30:02 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:30:02 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 1100)
+2026-05-31 11:30:02 | INFO | training.trainer | New best model saved! val_loss=1.9987
+2026-05-31 11:30:03 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step1100/training_state
+2026-05-31 11:30:03 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step1100/training_state/optimizer.bin
+2026-05-31 11:30:03 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step1100/training_state/scheduler.bin
+2026-05-31 11:30:03 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step1100/training_state/sampler.bin
+2026-05-31 11:30:03 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step1100/training_state/sampler_1.bin
+2026-05-31 11:30:03 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step1100/training_state/random_states_0.pkl
+2026-05-31 11:30:03 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step1100 (step 1100)
+2026-05-31 11:30:03 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step800
+2026-05-31 11:30:20 | INFO | training.trainer | Step 1110/1572 | Loss: 1.9623 | LR: 4.20e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:30:37 | INFO | training.trainer | Step 1120/1572 | Loss: 1.9259 | LR: 4.03e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:30:53 | INFO | training.trainer | Step 1130/1572 | Loss: 1.9310 | LR: 3.87e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:31:10 | INFO | training.trainer | Step 1140/1572 | Loss: 1.9561 | LR: 3.71e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:31:27 | INFO | training.trainer | Step 1150/1572 | Loss: 1.8791 | LR: 3.55e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:31:44 | INFO | training.trainer | Step 1160/1572 | Loss: 1.9711 | LR: 3.39e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:32:01 | INFO | training.trainer | Step 1170/1572 | Loss: 1.9142 | LR: 3.24e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:32:18 | INFO | training.trainer | Step 1180/1572 | Loss: 1.9807 | LR: 3.09e-05 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:32:35 | INFO | training.trainer | Step 1190/1572 | Loss: 2.0301 | LR: 2.94e-05 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:32:52 | INFO | training.trainer | Step 1200/1572 | Loss: 1.9418 | LR: 2.80e-05 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:32:52 | INFO | training.trainer | Running evaluation at step 1200...
+2026-05-31 11:33:19 | INFO | training.trainer | Validation - Loss: 1.9985 | Perplexity: 7.38
+2026-05-31 11:33:20 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:33:20 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:33:20 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:33:20 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:33:20 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:33:20 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:33:20 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 1200)
+2026-05-31 11:33:20 | INFO | training.trainer | New best model saved! val_loss=1.9985
+2026-05-31 11:33:21 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step1200/training_state
+2026-05-31 11:33:21 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step1200/training_state/optimizer.bin
+2026-05-31 11:33:21 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step1200/training_state/scheduler.bin
+2026-05-31 11:33:21 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step1200/training_state/sampler.bin
+2026-05-31 11:33:21 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step1200/training_state/sampler_1.bin
+2026-05-31 11:33:21 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step1200/training_state/random_states_0.pkl
+2026-05-31 11:33:21 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step1200 (step 1200)
+2026-05-31 11:33:21 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step900
+2026-05-31 11:33:38 | INFO | training.trainer | Step 1210/1572 | Loss: 1.9343 | LR: 2.65e-05 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:33:55 | INFO | training.trainer | Step 1220/1572 | Loss: 2.0068 | LR: 2.52e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:34:12 | INFO | training.trainer | Step 1230/1572 | Loss: 1.9448 | LR: 2.38e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:34:28 | INFO | training.trainer | Step 1240/1572 | Loss: 1.9256 | LR: 2.25e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:34:45 | INFO | training.trainer | Step 1250/1572 | Loss: 1.9299 | LR: 2.12e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:35:02 | INFO | training.trainer | Step 1260/1572 | Loss: 1.9971 | LR: 2.00e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:35:19 | INFO | training.trainer | Step 1270/1572 | Loss: 1.9437 | LR: 1.87e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:35:36 | INFO | training.trainer | Step 1280/1572 | Loss: 1.9630 | LR: 1.76e-05 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:35:53 | INFO | training.trainer | Step 1290/1572 | Loss: 1.9324 | LR: 1.64e-05 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:36:10 | INFO | training.trainer | Step 1300/1572 | Loss: 1.9381 | LR: 1.53e-05 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:36:10 | INFO | training.trainer | Running evaluation at step 1300...
+2026-05-31 11:36:37 | INFO | training.trainer | Validation - Loss: 1.9989 | Perplexity: 7.38
+2026-05-31 11:36:38 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step1300/training_state
+2026-05-31 11:36:38 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step1300/training_state/optimizer.bin
+2026-05-31 11:36:38 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step1300/training_state/scheduler.bin
+2026-05-31 11:36:38 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step1300/training_state/sampler.bin
+2026-05-31 11:36:38 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step1300/training_state/sampler_1.bin
+2026-05-31 11:36:38 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step1300/training_state/random_states_0.pkl
+2026-05-31 11:36:38 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step1300 (step 1300)
+2026-05-31 11:36:38 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step1000
+2026-05-31 11:36:55 | INFO | training.trainer | Step 1310/1572 | Loss: 2.0358 | LR: 1.42e-05 | Tokens/s: 1296 | GPU: 2.0GB
+2026-05-31 11:37:11 | INFO | training.trainer | Step 1320/1572 | Loss: 1.9906 | LR: 1.32e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:37:28 | INFO | training.trainer | Step 1330/1572 | Loss: 1.9410 | LR: 1.22e-05 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:37:45 | INFO | training.trainer | Step 1340/1572 | Loss: 1.9052 | LR: 1.12e-05 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:38:02 | INFO | training.trainer | Step 1350/1572 | Loss: 1.9811 | LR: 1.03e-05 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:38:19 | INFO | training.trainer | Step 1360/1572 | Loss: 1.9475 | LR: 9.39e-06 | Tokens/s: 1293 | GPU: 2.0GB
+2026-05-31 11:38:36 | INFO | training.trainer | Step 1370/1572 | Loss: 1.9456 | LR: 8.53e-06 | Tokens/s: 1292 | GPU: 2.0GB
+2026-05-31 11:38:53 | INFO | training.trainer | Step 1380/1572 | Loss: 1.9986 | LR: 7.72e-06 | Tokens/s: 1294 | GPU: 2.0GB
+2026-05-31 11:39:10 | INFO | training.trainer | Step 1390/1572 | Loss: 1.9352 | LR: 6.95e-06 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:39:27 | INFO | training.trainer | Step 1400/1572 | Loss: 1.9314 | LR: 6.21e-06 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:39:27 | INFO | training.trainer | Running evaluation at step 1400...
+2026-05-31 11:39:53 | INFO | training.trainer | Validation - Loss: 1.9982 | Perplexity: 7.38
+2026-05-31 11:39:54 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-05-31 11:39:54 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-05-31 11:39:54 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-05-31 11:39:54 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-05-31 11:39:54 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-05-31 11:39:54 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-05-31 11:39:54 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 1400)
+2026-05-31 11:39:54 | INFO | training.trainer | New best model saved! val_loss=1.9982
+2026-05-31 11:39:55 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step1400/training_state
+2026-05-31 11:39:55 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step1400/training_state/optimizer.bin
+2026-05-31 11:39:55 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step1400/training_state/scheduler.bin
+2026-05-31 11:39:55 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step1400/training_state/sampler.bin
+2026-05-31 11:39:55 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step1400/training_state/sampler_1.bin
+2026-05-31 11:39:55 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step1400/training_state/random_states_0.pkl
+2026-05-31 11:39:55 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step1400 (step 1400)
+2026-05-31 11:39:55 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step1100
+2026-05-31 11:40:12 | INFO | training.trainer | Step 1410/1572 | Loss: 1.9326 | LR: 5.52e-06 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:40:29 | INFO | training.trainer | Step 1420/1572 | Loss: 2.0045 | LR: 4.86e-06 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:40:46 | INFO | training.trainer | Step 1430/1572 | Loss: 1.9712 | LR: 4.25e-06 | Tokens/s: 1296 | GPU: 2.0GB
+2026-05-31 11:41:02 | INFO | training.trainer | Step 1440/1572 | Loss: 1.8691 | LR: 3.67e-06 | Tokens/s: 1296 | GPU: 2.0GB
+2026-05-31 11:41:19 | INFO | training.trainer | Step 1450/1572 | Loss: 1.9761 | LR: 3.14e-06 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:41:36 | INFO | training.trainer | Step 1460/1572 | Loss: 1.9117 | LR: 2.65e-06 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:41:53 | INFO | training.trainer | Step 1470/1572 | Loss: 1.9611 | LR: 2.20e-06 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:42:10 | INFO | training.trainer | Step 1480/1572 | Loss: 1.9708 | LR: 1.79e-06 | Tokens/s: 1296 | GPU: 2.0GB
+2026-05-31 11:42:27 | INFO | training.trainer | Step 1490/1572 | Loss: 1.9473 | LR: 1.42e-06 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:42:44 | INFO | training.trainer | Step 1500/1572 | Loss: 2.0259 | LR: 1.10e-06 | Tokens/s: 1296 | GPU: 2.0GB
+2026-05-31 11:42:44 | INFO | training.trainer | Running evaluation at step 1500...
+2026-05-31 11:43:11 | INFO | training.trainer | Validation - Loss: 1.9983 | Perplexity: 7.38
+2026-05-31 11:43:12 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step1500/training_state
+2026-05-31 11:43:12 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step1500/training_state/optimizer.bin
+2026-05-31 11:43:12 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step1500/training_state/scheduler.bin
+2026-05-31 11:43:12 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step1500/training_state/sampler.bin
+2026-05-31 11:43:12 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step1500/training_state/sampler_1.bin
+2026-05-31 11:43:12 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step1500/training_state/random_states_0.pkl
+2026-05-31 11:43:12 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step1500 (step 1500)
+2026-05-31 11:43:12 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step1200
+2026-05-31 11:43:29 | INFO | training.trainer | Step 1510/1572 | Loss: 1.9083 | LR: 8.15e-07 | Tokens/s: 1296 | GPU: 2.0GB
+2026-05-31 11:43:46 | INFO | training.trainer | Step 1520/1572 | Loss: 1.9402 | LR: 5.73e-07 | Tokens/s: 1296 | GPU: 2.0GB
+2026-05-31 11:44:02 | INFO | training.trainer | Step 1530/1572 | Loss: 1.9598 | LR: 3.74e-07 | Tokens/s: 1296 | GPU: 2.0GB
+2026-05-31 11:44:19 | INFO | training.trainer | Step 1540/1572 | Loss: 1.8902 | LR: 2.17e-07 | Tokens/s: 1296 | GPU: 2.0GB
+2026-05-31 11:44:36 | INFO | training.trainer | Step 1550/1572 | Loss: 1.9724 | LR: 1.03e-07 | Tokens/s: 1295 | GPU: 2.0GB
+2026-05-31 11:44:53 | INFO | training.trainer | Step 1560/1572 | Loss: 2.0453 | LR: 3.06e-08 | Tokens/s: 1279 | GPU: 2.0GB
+2026-05-31 11:45:10 | INFO | training.trainer | Epoch 3/3 complete | Avg Loss: 1.9550 | Time: 1028s
+2026-05-31 11:45:20 | WARNING | huggingface_hub.utils._http | '(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 5e91c80e-e96a-440b-8591-4888715da957)')' thrown while requesting HEAD https://huggingface.co/Qwen/Qwen2-1.5B-Instruct/resolve/main/config.json
+2026-05-31 11:45:20 | WARNING | huggingface_hub.utils._http | Retrying in 1s [Retry 1/5].
+2026-05-31 11:45:21 | INFO | accelerate.accelerator | Saving current state to ./outputs/final_model/training_state
+2026-05-31 11:45:21 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/final_model/training_state/optimizer.bin
+2026-05-31 11:45:21 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/final_model/training_state/scheduler.bin
+2026-05-31 11:45:21 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/final_model/training_state/sampler.bin
+2026-05-31 11:45:21 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/final_model/training_state/sampler_1.bin
+2026-05-31 11:45:21 | INFO | accelerate.checkpointing | Random states saved in outputs/final_model/training_state/random_states_0.pkl
+2026-05-31 11:45:21 | INFO | training.trainer | Checkpoint saved: ./outputs/final_model (step 1569)
+2026-05-31 11:45:21 | INFO | training.trainer | Training complete. Final model saved to ./outputs/final_model
+2026-06-02 09:41:26 | INFO | __main__ | ============================================================
+2026-06-02 09:41:26 | INFO | __main__ | SYSTEM INFORMATION
+2026-06-02 09:41:26 | INFO | __main__ | ============================================================
+2026-06-02 09:41:26 | INFO | __main__ | Python: 3.12.13
+2026-06-02 09:41:26 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-06-02 09:41:26 | INFO | __main__ | CUDA: 12.8
+2026-06-02 09:41:26 | INFO | __main__ | GPU count: 1
+2026-06-02 09:41:26 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-06-02 09:41:26 | INFO | __main__ | BF16 supported: True
+2026-06-02 09:41:26 | INFO | __main__ | transformers: 4.57.3
+2026-06-02 09:41:26 | INFO | __main__ | peft: 0.18.1
+2026-06-02 09:41:28 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-06-02 09:41:28 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-06-02 09:41:28 | INFO | __main__ | ============================================================
+2026-06-02 09:41:28 | INFO | __main__ | Random seeds set to 42
+2026-06-02 09:41:28 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-06-02 09:41:28 | INFO | __main__ | Model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 09:41:28 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-06-02 09:41:28 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-06-02 09:41:28 | INFO | __main__ | Output dir: ./outputs
+2026-06-02 09:41:28 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-06-02 09:41:28 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 09:41:32 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-06-02 09:41:32 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-06-02 09:41:32 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-06-02 09:41:35 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-06-02 09:41:41 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-06-02 09:41:41 | INFO | data.dataset | Auto-detected template: chatml
+2026-06-02 09:41:41 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-06-02 09:41:41 | INFO | __main__ | Train: 8861 examples
+2026-06-02 09:41:41 | INFO | __main__ | Validation: 985 examples
+2026-06-02 09:41:41 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-06-02 09:41:46 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-06-02 09:41:47 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-06-02 09:41:47 | INFO | __main__ | Train batches: 2093, Val batches: 236
+2026-06-02 09:41:47 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-06-02 09:41:47 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-06-02 09:41:47 | INFO | models.model_loader | Loading model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 09:41:52 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-06-02 09:41:52 | INFO | models.model_loader | Estimated model weight memory: 0.74 GB
+2026-06-02 09:41:52 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-06-02 09:41:52 | INFO | models.model_loader | LoRA target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+2026-06-02 09:41:52 | INFO | models.model_loader | All params: 892,974,592 | Trainable: 4,358,144 | Trainable%: 0.49%
+2026-06-02 09:41:52 | INFO | __main__ | 
+[6/6] Starting training...
+2026-06-02 09:41:52 | INFO | training.trainer | Training steps per epoch: 524, Total training steps: 1572
+2026-06-02 09:41:52 | INFO | training.trainer | Using 8bit adamw paging using bitsandbytes.
+2026-06-02 09:41:52 | INFO | training.trainer | Optimizer: paged_adamw_8bit, Scheduler: cosine, Warmup steps: 47/1572
+2026-06-02 09:41:56 | INFO | training.trainer | WandB initialized: https://wandb.ai/div230-manipal-university-jaipur/llm-finetune/runs/gwqzi0yl
+2026-06-02 09:41:56 | INFO | training.trainer | ============================================================
+2026-06-02 09:41:56 | INFO | training.trainer | STARTING TRAINING
+2026-06-02 09:41:56 | INFO | training.trainer | ============================================================
+2026-06-02 09:41:56 | INFO | training.trainer |   Epochs: 3
+2026-06-02 09:41:56 | INFO | training.trainer |   Steps per epoch: 524
+2026-06-02 09:41:56 | INFO | training.trainer |   Total steps: 1572
+2026-06-02 09:41:56 | INFO | training.trainer |   Effective batch size: 16
+2026-06-02 09:41:56 | INFO | training.trainer | ============================================================
+2026-06-02 09:42:14 | INFO | training.trainer | Step 10/1572 | Loss: 2.6300 | LR: 4.26e-05 | Tokens/s: 1201 | GPU: 2.0GB
+2026-06-02 09:42:31 | INFO | training.trainer | Step 20/1572 | Loss: 2.5877 | LR: 8.51e-05 | Tokens/s: 1288 | GPU: 2.0GB
+2026-06-02 09:42:48 | INFO | training.trainer | Step 30/1572 | Loss: 2.3860 | LR: 1.28e-04 | Tokens/s: 1277 | GPU: 2.0GB
+2026-06-02 09:43:05 | INFO | training.trainer | Step 40/1572 | Loss: 2.2879 | LR: 1.70e-04 | Tokens/s: 1277 | GPU: 2.0GB
+2026-06-02 09:43:23 | INFO | training.trainer | Step 50/1572 | Loss: 2.1790 | LR: 2.00e-04 | Tokens/s: 1255 | GPU: 2.0GB
+2026-06-02 09:43:44 | INFO | training.trainer | Step 60/1572 | Loss: 2.2172 | LR: 2.00e-04 | Tokens/s: 1004 | GPU: 2.0GB
+2026-06-02 09:44:03 | INFO | training.trainer | Step 70/1572 | Loss: 2.1235 | LR: 2.00e-04 | Tokens/s: 1142 | GPU: 2.0GB
+2026-06-02 09:44:22 | INFO | training.trainer | Step 80/1572 | Loss: 2.1295 | LR: 2.00e-04 | Tokens/s: 1131 | GPU: 2.0GB
+2026-06-02 09:44:42 | INFO | training.trainer | Step 90/1572 | Loss: 2.1798 | LR: 2.00e-04 | Tokens/s: 1080 | GPU: 2.0GB
+2026-06-02 09:45:01 | INFO | training.trainer | Step 100/1572 | Loss: 2.1988 | LR: 1.99e-04 | Tokens/s: 1123 | GPU: 2.0GB
+2026-06-02 09:45:01 | INFO | training.trainer | Running evaluation at step 100...
+2026-06-02 09:45:34 | INFO | training.trainer | Validation - Loss: 2.1105 | Perplexity: 8.25
+2026-06-02 09:45:35 | INFO | accelerate.accelerator | Saving current state to ./outputs/best_model/training_state
+2026-06-02 09:45:35 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/best_model/training_state/optimizer.bin
+2026-06-02 09:45:35 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/best_model/training_state/scheduler.bin
+2026-06-02 09:45:35 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/best_model/training_state/sampler.bin
+2026-06-02 09:45:35 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/best_model/training_state/sampler_1.bin
+2026-06-02 09:45:35 | INFO | accelerate.checkpointing | Random states saved in outputs/best_model/training_state/random_states_0.pkl
+2026-06-02 09:45:35 | INFO | training.trainer | Checkpoint saved: ./outputs/best_model (step 100)
+2026-06-02 09:45:35 | INFO | training.trainer | New best model saved! val_loss=2.1105
+2026-06-02 09:45:36 | INFO | accelerate.accelerator | Saving current state to ./outputs/checkpoint-step100/training_state
+2026-06-02 09:45:36 | INFO | accelerate.checkpointing | Optimizer state saved in outputs/checkpoint-step100/training_state/optimizer.bin
+2026-06-02 09:45:36 | INFO | accelerate.checkpointing | Scheduler state saved in outputs/checkpoint-step100/training_state/scheduler.bin
+2026-06-02 09:45:36 | INFO | accelerate.checkpointing | Sampler state for dataloader 0 saved in outputs/checkpoint-step100/training_state/sampler.bin
+2026-06-02 09:45:36 | INFO | accelerate.checkpointing | Sampler state for dataloader 1 saved in outputs/checkpoint-step100/training_state/sampler_1.bin
+2026-06-02 09:45:36 | INFO | accelerate.checkpointing | Random states saved in outputs/checkpoint-step100/training_state/random_states_0.pkl
+2026-06-02 09:45:36 | INFO | training.trainer | Checkpoint saved: ./outputs/checkpoint-step100 (step 100)
+2026-06-02 09:45:36 | INFO | training.trainer | Removed old checkpoint: ./outputs/checkpoint-step100
+2026-06-02 09:45:54 | INFO | training.trainer | Step 110/1572 | Loss: 2.1016 | LR: 1.99e-04 | Tokens/s: 1240 | GPU: 2.0GB
+2026-06-02 09:46:14 | INFO | training.trainer | Step 120/1572 | Loss: 2.1656 | LR: 1.99e-04 | Tokens/s: 1100 | GPU: 2.0GB
+2026-06-02 09:46:33 | INFO | training.trainer | Step 130/1572 | Loss: 2.2001 | LR: 1.99e-04 | Tokens/s: 1101 | GPU: 2.0GB
+2026-06-02 09:46:52 | INFO | training.trainer | Step 140/1572 | Loss: 2.1331 | LR: 1.98e-04 | Tokens/s: 1139 | GPU: 2.0GB
+2026-06-02 09:47:12 | INFO | training.trainer | Step 150/1572 | Loss: 2.0583 | LR: 1.98e-04 | Tokens/s: 1046 | GPU: 2.0GB
+2026-06-02 09:47:57 | INFO | __main__ | ============================================================
+2026-06-02 09:47:57 | INFO | __main__ | SYSTEM INFORMATION
+2026-06-02 09:47:57 | INFO | __main__ | ============================================================
+2026-06-02 09:47:57 | INFO | __main__ | Python: 3.12.13
+2026-06-02 09:47:57 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-06-02 09:47:57 | INFO | __main__ | CUDA: 12.8
+2026-06-02 09:47:57 | INFO | __main__ | GPU count: 1
+2026-06-02 09:47:57 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-06-02 09:47:57 | INFO | __main__ | BF16 supported: True
+2026-06-02 09:47:57 | INFO | __main__ | transformers: 4.57.3
+2026-06-02 09:47:57 | INFO | __main__ | peft: 0.18.1
+2026-06-02 09:47:59 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-06-02 09:47:59 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-06-02 09:47:59 | INFO | __main__ | ============================================================
+2026-06-02 09:47:59 | INFO | __main__ | Random seeds set to 42
+2026-06-02 09:47:59 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-06-02 09:47:59 | INFO | __main__ | Model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 09:47:59 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-06-02 09:47:59 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-06-02 09:47:59 | INFO | __main__ | Output dir: ./outputs
+2026-06-02 09:47:59 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-06-02 09:47:59 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 09:48:02 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-06-02 09:48:02 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-06-02 09:48:02 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-06-02 09:48:05 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-06-02 09:48:15 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-06-02 09:48:15 | INFO | data.dataset | Auto-detected template: chatml
+2026-06-02 09:48:15 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-06-02 09:48:15 | INFO | __main__ | Train: 8861 examples
+2026-06-02 09:48:15 | INFO | __main__ | Validation: 985 examples
+2026-06-02 09:48:15 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-06-02 09:48:22 | INFO | data.dataset | Packed 8861 examples into 8374 chunks of length 128
+2026-06-02 09:48:22 | INFO | data.dataset | Packed 985 examples into 942 chunks of length 128
+2026-06-02 09:48:22 | INFO | __main__ | Train batches: 2093, Val batches: 236
+2026-06-02 09:48:22 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-06-02 09:48:22 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-06-02 09:48:22 | INFO | models.model_loader | Loading model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 09:48:29 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-06-02 09:48:29 | INFO | models.model_loader | Estimated model weight memory: 0.74 GB
+2026-06-02 09:48:29 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-06-02 09:48:29 | INFO | models.model_loader | LoRA target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+2026-06-02 09:48:29 | INFO | models.model_loader | All params: 892,974,592 | Trainable: 4,358,144 | Trainable%: 0.49%
+2026-06-02 09:48:29 | INFO | __main__ | Applying torch.compile...
+2026-06-02 09:48:29 | INFO | __main__ | 
+[6/6] Starting training...
+2026-06-02 09:48:29 | INFO | training.trainer | Training steps per epoch: 524, Total training steps: 1572
+2026-06-02 09:48:29 | INFO | training.trainer | Using 8bit adamw paging using bitsandbytes.
+2026-06-02 09:48:29 | INFO | training.trainer | Optimizer: paged_adamw_8bit, Scheduler: cosine, Warmup steps: 47/1572
+2026-06-02 09:48:33 | INFO | training.trainer | WandB initialized: https://wandb.ai/div230-manipal-university-jaipur/llm-finetune/runs/uqcoyuld
+2026-06-02 09:48:33 | INFO | training.trainer | ============================================================
+2026-06-02 09:48:33 | INFO | training.trainer | STARTING TRAINING
+2026-06-02 09:48:33 | INFO | training.trainer | ============================================================
+2026-06-02 09:48:33 | INFO | training.trainer |   Epochs: 3
+2026-06-02 09:48:33 | INFO | training.trainer |   Steps per epoch: 524
+2026-06-02 09:48:33 | INFO | training.trainer |   Total steps: 1572
+2026-06-02 09:48:33 | INFO | training.trainer |   Effective batch size: 16
+2026-06-02 09:48:33 | INFO | training.trainer | ============================================================
+2026-06-02 10:04:20 | INFO | __main__ | ============================================================
+2026-06-02 10:04:20 | INFO | __main__ | SYSTEM INFORMATION
+2026-06-02 10:04:20 | INFO | __main__ | ============================================================
+2026-06-02 10:04:20 | INFO | __main__ | Python: 3.12.13
+2026-06-02 10:04:20 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-06-02 10:04:20 | INFO | __main__ | CUDA: 12.8
+2026-06-02 10:04:20 | INFO | __main__ | GPU count: 1
+2026-06-02 10:04:20 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-06-02 10:04:20 | INFO | __main__ | BF16 supported: True
+2026-06-02 10:04:20 | INFO | __main__ | transformers: 4.57.3
+2026-06-02 10:04:20 | INFO | __main__ | peft: 0.18.1
+2026-06-02 10:04:21 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-06-02 10:04:21 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-06-02 10:04:21 | INFO | __main__ | ============================================================
+2026-06-02 10:04:21 | INFO | __main__ | Random seeds set to 42
+2026-06-02 10:04:21 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-06-02 10:04:21 | INFO | __main__ | Model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 10:04:21 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-06-02 10:04:21 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-06-02 10:04:21 | INFO | __main__ | Output dir: ./outputs
+2026-06-02 10:04:21 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-06-02 10:04:21 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 10:04:23 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-06-02 10:04:23 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-06-02 10:04:23 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-06-02 10:04:24 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-06-02 10:04:28 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-06-02 10:04:28 | INFO | data.dataset | Auto-detected template: chatml
+2026-06-02 10:04:28 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-06-02 10:04:28 | INFO | __main__ | Train: 8861 examples
+2026-06-02 10:04:28 | INFO | __main__ | Validation: 985 examples
+2026-06-02 10:04:28 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-06-02 10:04:34 | INFO | data.dataset | Packed 8861 examples into 5357 chunks of length 512
+2026-06-02 10:04:34 | INFO | data.dataset | Packed 985 examples into 618 chunks of length 512
+2026-06-02 10:04:34 | INFO | __main__ | Train batches: 1339, Val batches: 155
+2026-06-02 10:04:34 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-06-02 10:04:34 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-06-02 10:04:34 | INFO | models.model_loader | Loading model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 10:04:38 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-06-02 10:04:38 | INFO | models.model_loader | Estimated model weight memory: 0.74 GB
+2026-06-02 10:04:38 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-06-02 10:04:38 | INFO | models.model_loader | LoRA target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+2026-06-02 10:04:39 | INFO | models.model_loader | All params: 892,974,592 | Trainable: 4,358,144 | Trainable%: 0.49%
+2026-06-02 10:04:39 | INFO | __main__ | 
+[6/6] Starting training...
+2026-06-02 10:04:39 | INFO | training.trainer | Training steps per epoch: 335, Total training steps: 1005
+2026-06-02 10:04:39 | INFO | training.trainer | Using 8bit adamw paging using bitsandbytes.
+2026-06-02 10:04:39 | INFO | training.trainer | Optimizer: paged_adamw_8bit, Scheduler: cosine, Warmup steps: 30/1005
+2026-06-02 10:04:44 | INFO | training.trainer | WandB initialized: https://wandb.ai/div230-manipal-university-jaipur/llm-finetune/runs/64xxsyzi
+2026-06-02 10:04:45 | INFO | training.trainer | ============================================================
+2026-06-02 10:04:45 | INFO | training.trainer | STARTING TRAINING
+2026-06-02 10:04:45 | INFO | training.trainer | ============================================================
+2026-06-02 10:04:45 | INFO | training.trainer |   Epochs: 3
+2026-06-02 10:04:45 | INFO | training.trainer |   Steps per epoch: 335
+2026-06-02 10:04:45 | INFO | training.trainer |   Total steps: 1005
+2026-06-02 10:04:45 | INFO | training.trainer |   Effective batch size: 16
+2026-06-02 10:04:45 | INFO | training.trainer | ============================================================
+2026-06-02 10:22:15 | INFO | __main__ | ============================================================
+2026-06-02 10:22:15 | INFO | __main__ | SYSTEM INFORMATION
+2026-06-02 10:22:15 | INFO | __main__ | ============================================================
+2026-06-02 10:22:15 | INFO | __main__ | Python: 3.12.13
+2026-06-02 10:22:15 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-06-02 10:22:15 | INFO | __main__ | CUDA: 12.8
+2026-06-02 10:22:15 | INFO | __main__ | GPU count: 1
+2026-06-02 10:22:15 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-06-02 10:22:15 | INFO | __main__ | BF16 supported: True
+2026-06-02 10:22:15 | INFO | __main__ | transformers: 4.57.3
+2026-06-02 10:22:15 | INFO | __main__ | peft: 0.18.1
+2026-06-02 10:22:16 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-06-02 10:22:16 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-06-02 10:22:16 | INFO | __main__ | ============================================================
+2026-06-02 10:22:16 | INFO | __main__ | Random seeds set to 42
+2026-06-02 10:22:16 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-06-02 10:22:16 | INFO | __main__ | Model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 10:22:16 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-06-02 10:22:16 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-06-02 10:22:16 | INFO | __main__ | Output dir: ./outputs
+2026-06-02 10:22:16 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-06-02 10:22:16 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 10:22:18 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-06-02 10:22:18 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-06-02 10:22:18 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-06-02 10:22:20 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-06-02 10:22:25 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-06-02 10:22:25 | INFO | data.dataset | Auto-detected template: chatml
+2026-06-02 10:22:26 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-06-02 10:22:26 | INFO | __main__ | Train: 8861 examples
+2026-06-02 10:22:26 | INFO | __main__ | Validation: 985 examples
+2026-06-02 10:22:26 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-06-02 10:22:32 | INFO | data.dataset | Packed 8861 examples into 5357 chunks of length 512
+2026-06-02 10:22:32 | INFO | data.dataset | Packed 985 examples into 618 chunks of length 512
+2026-06-02 10:22:32 | INFO | __main__ | Train batches: 2678, Val batches: 155
+2026-06-02 10:22:32 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-06-02 10:22:32 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-06-02 10:22:32 | INFO | models.model_loader | Loading model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 10:22:36 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-06-02 10:22:36 | INFO | models.model_loader | Estimated model weight memory: 0.74 GB
+2026-06-02 10:22:36 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-06-02 10:22:36 | INFO | models.model_loader | LoRA target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+2026-06-02 10:22:36 | INFO | models.model_loader | All params: 892,974,592 | Trainable: 4,358,144 | Trainable%: 0.49%
+2026-06-02 10:22:36 | INFO | __main__ | 
+[6/6] Starting training...
+2026-06-02 10:22:36 | INFO | training.trainer | Training steps per epoch: 670, Total training steps: 2010
+2026-06-02 10:22:36 | INFO | training.trainer | Using 8bit adamw paging using bitsandbytes.
+2026-06-02 10:22:36 | INFO | training.trainer | Optimizer: paged_adamw_8bit, Scheduler: cosine, Warmup steps: 60/2010
+2026-06-02 10:22:42 | INFO | training.trainer | WandB initialized: https://wandb.ai/div230-manipal-university-jaipur/llm-finetune/runs/hxbxu72s
+2026-06-02 10:22:42 | INFO | training.trainer | ============================================================
+2026-06-02 10:22:42 | INFO | training.trainer | STARTING TRAINING
+2026-06-02 10:22:42 | INFO | training.trainer | ============================================================
+2026-06-02 10:22:42 | INFO | training.trainer |   Epochs: 3
+2026-06-02 10:22:42 | INFO | training.trainer |   Steps per epoch: 670
+2026-06-02 10:22:42 | INFO | training.trainer |   Total steps: 2010
+2026-06-02 10:22:42 | INFO | training.trainer |   Effective batch size: 8
+2026-06-02 10:22:42 | INFO | training.trainer | ============================================================
+2026-06-02 10:23:20 | INFO | training.trainer | Step 10/2010 | Loss: 1.9459 | LR: 3.33e-05 | Tokens/s: 1135 | GPU: 2.3GB
+2026-06-02 10:23:58 | INFO | training.trainer | Step 20/2010 | Loss: 1.8777 | LR: 6.67e-05 | Tokens/s: 1149 | GPU: 2.3GB
+2026-06-02 10:24:40 | INFO | training.trainer | Step 30/2010 | Loss: 1.8530 | LR: 1.00e-04 | Tokens/s: 1051 | GPU: 2.3GB
+2026-06-02 10:25:19 | INFO | training.trainer | Step 40/2010 | Loss: 1.7523 | LR: 1.33e-04 | Tokens/s: 1113 | GPU: 2.3GB
+2026-06-02 10:25:57 | INFO | training.trainer | Step 50/2010 | Loss: 1.6909 | LR: 1.67e-04 | Tokens/s: 1151 | GPU: 2.3GB
+2026-06-02 10:26:35 | INFO | training.trainer | Step 60/2010 | Loss: 1.6535 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:27:13 | INFO | training.trainer | Step 70/2010 | Loss: 1.6439 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:27:51 | INFO | training.trainer | Step 80/2010 | Loss: 1.6719 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:28:29 | INFO | training.trainer | Step 90/2010 | Loss: 1.8231 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:29:07 | INFO | training.trainer | Step 100/2010 | Loss: 1.7241 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:29:07 | INFO | training.trainer | Running evaluation at step 100...
+2026-06-02 10:32:18 | INFO | __main__ | ============================================================
+2026-06-02 10:32:18 | INFO | __main__ | SYSTEM INFORMATION
+2026-06-02 10:32:18 | INFO | __main__ | ============================================================
+2026-06-02 10:32:18 | INFO | __main__ | Python: 3.12.13
+2026-06-02 10:32:18 | INFO | __main__ | PyTorch: 2.10.0+cu128
+2026-06-02 10:32:18 | INFO | __main__ | CUDA: 12.8
+2026-06-02 10:32:18 | INFO | __main__ | GPU count: 1
+2026-06-02 10:32:18 | INFO | __main__ |   GPU 0: NVIDIA GeForce RTX 4050 Laptop GPU | 6.1 GB | Compute 8.9
+2026-06-02 10:32:18 | INFO | __main__ | BF16 supported: True
+2026-06-02 10:32:18 | INFO | __main__ | transformers: 4.57.3
+2026-06-02 10:32:18 | INFO | __main__ | peft: 0.18.1
+2026-06-02 10:32:19 | INFO | __main__ | bitsandbytes: 0.49.2
+2026-06-02 10:32:19 | WARNING | __main__ | flash-attn not found — using PyTorch SDPA instead.
+2026-06-02 10:32:19 | INFO | __main__ | ============================================================
+2026-06-02 10:32:19 | INFO | __main__ | Random seeds set to 42
+2026-06-02 10:32:19 | INFO | __main__ | TF32 enabled for matmul and cudnn
+2026-06-02 10:32:19 | INFO | __main__ | Model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 10:32:19 | INFO | __main__ | Dataset: timdettmers/openassistant-guanaco
+2026-06-02 10:32:19 | INFO | __main__ | LoRA rank: 16, alpha: 16
+2026-06-02 10:32:19 | INFO | __main__ | Output dir: ./outputs
+2026-06-02 10:32:19 | INFO | __main__ | 
+[1/6] Loading tokenizer...
+2026-06-02 10:32:19 | INFO | models.model_loader | Loading tokenizer: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 10:32:25 | INFO | models.model_loader | Tokenizer vocab size: 151646, BOS: None, EOS: <|im_end|>, PAD: <|endoftext|>
+2026-06-02 10:32:25 | INFO | __main__ | 
+[2/6] Loading and preparing dataset...
+2026-06-02 10:32:25 | INFO | data.dataset | Loading dataset: timdettmers/openassistant-guanaco
+2026-06-02 10:32:28 | WARNING | huggingface_hub.repocard | Repo card metadata block was not found. Setting CardData to empty.
+2026-06-02 10:32:31 | INFO | data.dataset | Raw dataset loaded: Dataset({
+    features: ['text'],
+    num_rows: 9846
+})
+2026-06-02 10:32:31 | INFO | data.dataset | Auto-detected template: chatml
+2026-06-02 10:32:31 | INFO | data.dataset | Dataset split: 8861 train, 985 validation examples
+2026-06-02 10:32:31 | INFO | __main__ | Train: 8861 examples
+2026-06-02 10:32:31 | INFO | __main__ | Validation: 985 examples
+2026-06-02 10:32:31 | INFO | __main__ | 
+[3/6] Creating DataLoaders...
+2026-06-02 10:32:38 | INFO | data.dataset | Packed 8861 examples into 5357 chunks of length 512
+2026-06-02 10:32:39 | INFO | data.dataset | Packed 985 examples into 618 chunks of length 512
+2026-06-02 10:32:39 | INFO | __main__ | Train batches: 5357, Val batches: 155
+2026-06-02 10:32:39 | INFO | __main__ | 
+[4/6] Loading base model...
+2026-06-02 10:32:39 | INFO | models.model_loader | Created 4-bit config: type=nf4, compute=bfloat16, double_quant=True
+2026-06-02 10:32:39 | INFO | models.model_loader | Loading model: Qwen/Qwen2-1.5B-Instruct
+2026-06-02 10:32:41 | INFO | models.model_loader | Model loaded. dtype: torch.bfloat16
+2026-06-02 10:32:41 | INFO | models.model_loader | Estimated model weight memory: 0.74 GB
+2026-06-02 10:32:41 | INFO | __main__ | 
+[5/6] Setting up LoRA adapters...
+2026-06-02 10:32:41 | INFO | models.model_loader | LoRA target modules: ['q_proj', 'k_proj', 'v_proj', 'o_proj']
+2026-06-02 10:32:41 | INFO | models.model_loader | All params: 892,974,592 | Trainable: 4,358,144 | Trainable%: 0.49%
+2026-06-02 10:32:41 | INFO | __main__ | 
+[6/6] Starting training...
+2026-06-02 10:32:41 | INFO | training.trainer | Training steps per epoch: 1340, Total training steps: 4020
+2026-06-02 10:32:41 | INFO | training.trainer | Using 8bit adamw paging using bitsandbytes.
+2026-06-02 10:32:41 | INFO | training.trainer | Optimizer: paged_adamw_8bit, Scheduler: cosine, Warmup steps: 120/4020
+2026-06-02 10:32:45 | INFO | training.trainer | WandB initialized: https://wandb.ai/div230-manipal-university-jaipur/llm-finetune/runs/tticzhmy
+2026-06-02 10:32:45 | INFO | training.trainer | ============================================================
+2026-06-02 10:32:45 | INFO | training.trainer | STARTING TRAINING
+2026-06-02 10:32:45 | INFO | training.trainer | ============================================================
+2026-06-02 10:32:45 | INFO | training.trainer |   Epochs: 3
+2026-06-02 10:32:45 | INFO | training.trainer |   Steps per epoch: 1340
+2026-06-02 10:32:45 | INFO | training.trainer |   Total steps: 4020
+2026-06-02 10:32:45 | INFO | training.trainer |   Effective batch size: 4
+2026-06-02 10:32:45 | INFO | training.trainer | ============================================================
+2026-06-02 10:33:03 | INFO | training.trainer | Step 10/4020 | Loss: 1.9037 | LR: 1.67e-05 | Tokens/s: 1185 | GPU: 2.0GB
+2026-06-02 10:33:22 | INFO | training.trainer | Step 20/4020 | Loss: 1.9848 | LR: 3.33e-05 | Tokens/s: 1199 | GPU: 2.0GB
+2026-06-02 10:33:40 | INFO | training.trainer | Step 30/4020 | Loss: 1.8886 | LR: 5.00e-05 | Tokens/s: 1198 | GPU: 2.0GB
+2026-06-02 10:33:58 | INFO | training.trainer | Step 40/4020 | Loss: 1.8280 | LR: 6.67e-05 | Tokens/s: 1197 | GPU: 2.0GB
+2026-06-02 10:34:17 | INFO | training.trainer | Step 50/4020 | Loss: 1.7196 | LR: 8.33e-05 | Tokens/s: 1197 | GPU: 2.0GB
+2026-06-02 10:34:35 | INFO | training.trainer | Step 60/4020 | Loss: 1.8875 | LR: 1.00e-04 | Tokens/s: 1197 | GPU: 2.0GB
+2026-06-02 10:34:53 | INFO | training.trainer | Step 70/4020 | Loss: 1.7571 | LR: 1.17e-04 | Tokens/s: 1197 | GPU: 2.0GB
+2026-06-02 10:35:11 | INFO | training.trainer | Step 80/4020 | Loss: 1.6809 | LR: 1.33e-04 | Tokens/s: 1196 | GPU: 2.0GB
+2026-06-02 10:35:30 | INFO | training.trainer | Step 90/4020 | Loss: 1.5829 | LR: 1.50e-04 | Tokens/s: 1198 | GPU: 2.0GB
+2026-06-02 10:35:48 | INFO | training.trainer | Step 100/4020 | Loss: 1.7556 | LR: 1.67e-04 | Tokens/s: 1198 | GPU: 2.0GB
+2026-06-02 10:35:48 | INFO | training.trainer | Running evaluation at step 100...

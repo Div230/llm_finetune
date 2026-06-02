@@ -307,9 +307,9 @@ def main():
 
     # Optional: torch.compile for forward pass speedup
     # Disabled by default due to PEFT compatibility issues
-    # if model_config.torch_compile and hasattr(torch, 'compile'):
-    #     logger.info("Applying torch.compile...")
-    #     model = torch.compile(model, mode='default')
+    if model_config.torch_compile and hasattr(torch, 'compile'):
+        logger.info("Applying torch.compile...")
+        model = torch.compile(model, mode='default')
 
     # ── Step 6: Train ─────────────────────────────────────────────────────────
     logger.info("\n[6/6] Starting training...")

@@ -239,6 +239,7 @@ def create_optimizer_and_scheduler(
     if "paged_adamw_8bit" in optimizer_name:
         try:
             import bitsandbytes as bnb
+            logger.info("Using 8bit adamw paging using bitsandbytes.")
             optimizer = bnb.optim.PagedAdamW8bit(
                 optimizer_grouped_parameters,
                 lr=training_config.learning_rate,
@@ -254,6 +255,7 @@ def create_optimizer_and_scheduler(
     elif "paged_adamw_32bit" in optimizer_name:
         try:
             import bitsandbytes as bnb
+            logger.info("Using 32bit adamw paging using bitsandbytes.")
             optimizer = bnb.optim.PagedAdamW32bit(
                 optimizer_grouped_parameters,
                 lr=training_config.learning_rate,
@@ -571,8 +573,8 @@ def train(
     # - Wraps model in DDP for multi-GPU
     # - Distributes data across GPUs
     # - Handles device placement
-    model, optimizer, train_loader, val_loader, scheduler = accelerator.prepare(
-        model, optimizer, train_loader, val_loader, scheduler
+    optimizer, train_loader, val_loader, scheduler = accelerator.prepare(
+        optimizer, train_loader, val_loader, scheduler
     )
 
     # ── WandB Initialization ──────────────────────────────────────────────────

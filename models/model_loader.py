@@ -275,6 +275,12 @@ def load_base_model(
         quantization_config=bnb_config,
         # Device placement: 'auto' = Accelerate decides, or specify 'cuda:0'
         device_map="auto",
+        max_memory={
+            0: "5.5GiB",     # GPU limit
+            "cpu": "10GiB" # CPU RAM available
+        },
+        offload_folder="./offload",
+        low_cpu_mem_usage=True,
         # Compute dtype for non-quantized computations
         torch_dtype=torch_dtype,
         # FLASH ATTENTION 2 via attn_implementation
@@ -293,6 +299,23 @@ def load_base_model(
         # pretraining_tp=1: Disable tensor parallelism (we use data parallelism instead)
     )
 
+    print("="*50)
+    print("4bit:", getattr(model, "is_loaded_in_4bit", False))
+    print("8bit:", getattr(model, "is_loaded_in_8bit", False))
+    print(
+        "VRAM:",
+        torch.cuda.memory_allocated()/1024**3,
+        "GB"
+    )
+    print("="*50)
+    print("="*50)
+    print(model.hf_device_map)
+    print(
+        "VRAM:",
+        torch.cuda.memory_allocated()/1024**3,
+        "GB"
+    )
+    print("="*50)
     logger.info(f"Model loaded. dtype: {torch_dtype}")
     _log_model_memory(model)
 

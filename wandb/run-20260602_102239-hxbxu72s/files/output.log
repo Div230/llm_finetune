@@ -1,0 +1,72 @@
+2026-06-02 10:22:42 | INFO | training.trainer | WandB initialized: https://wandb.ai/div230-manipal-university-jaipur/llm-finetune/runs/hxbxu72s
+2026-06-02 10:22:42 | INFO | training.trainer | ============================================================
+2026-06-02 10:22:42 | INFO | training.trainer | STARTING TRAINING
+2026-06-02 10:22:42 | INFO | training.trainer | ============================================================
+2026-06-02 10:22:42 | INFO | training.trainer |   Epochs: 3
+2026-06-02 10:22:42 | INFO | training.trainer |   Steps per epoch: 670
+2026-06-02 10:22:42 | INFO | training.trainer |   Total steps: 2010
+2026-06-02 10:22:42 | INFO | training.trainer |   Effective batch size: 8
+2026-06-02 10:22:42 | INFO | training.trainer | ============================================================
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+2026-06-02 10:23:20 | INFO | training.trainer | Step 10/2010 | Loss: 1.9459 | LR: 3.33e-05 | Tokens/s: 1135 | GPU: 2.3GB
+2026-06-02 10:23:58 | INFO | training.trainer | Step 20/2010 | Loss: 1.8777 | LR: 6.67e-05 | Tokens/s: 1149 | GPU: 2.3GB
+2026-06-02 10:24:40 | INFO | training.trainer | Step 30/2010 | Loss: 1.8530 | LR: 1.00e-04 | Tokens/s: 1051 | GPU: 2.3GB
+2026-06-02 10:25:19 | INFO | training.trainer | Step 40/2010 | Loss: 1.7523 | LR: 1.33e-04 | Tokens/s: 1113 | GPU: 2.3GB
+2026-06-02 10:25:57 | INFO | training.trainer | Step 50/2010 | Loss: 1.6909 | LR: 1.67e-04 | Tokens/s: 1151 | GPU: 2.3GB
+2026-06-02 10:26:35 | INFO | training.trainer | Step 60/2010 | Loss: 1.6535 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:27:13 | INFO | training.trainer | Step 70/2010 | Loss: 1.6439 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:27:51 | INFO | training.trainer | Step 80/2010 | Loss: 1.6719 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:28:29 | INFO | training.trainer | Step 90/2010 | Loss: 1.8231 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:29:07 | INFO | training.trainer | Step 100/2010 | Loss: 1.7241 | LR: 2.00e-04 | Tokens/s: 1152 | GPU: 2.3GB
+2026-06-02 10:29:07 | INFO | training.trainer | Running evaluation at step 100...
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/beaver/dev/ai/projects/llm_finetune/scripts/train.py", line 353, in <module>
+    main()
+  File "/home/beaver/dev/ai/projects/llm_finetune/scripts/train.py", line 316, in main
+    trained_model = train(
+                    ^^^^^^
+  File "/home/beaver/dev/ai/projects/llm_finetune/training/trainer.py", line 761, in train
+    val_metrics = evaluate(model, val_loader, accelerator)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/projects/llm_finetune/training/trainer.py", line 357, in evaluate
+    outputs = model(**batch)
+              ^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/peft/peft_model.py", line 1923, in forward
+    return self.base_model(
+           ^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/peft/tuners/tuners_utils.py", line 311, in forward
+    return self.model.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/transformers/utils/generic.py", line 918, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 467, in forward
+    loss = self.loss_function(logits=logits, labels=labels, vocab_size=self.config.vocab_size, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/transformers/loss/loss_utils.py", line 67, in ForCausalLMLoss
+    loss = fixed_cross_entropy(logits, shift_labels, num_items_in_batch, ignore_index, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/transformers/loss/loss_utils.py", line 36, in fixed_cross_entropy
+    loss = nn.functional.cross_entropy(source, target, ignore_index=ignore_index, reduction=reduction)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beaver/dev/ai/envs/mlenv/lib64/python3.12/site-packages/torch/nn/functional.py", line 3504, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.16 GiB. GPU 0 has a total capacity of 5.64 GiB of which 238.75 MiB is free. Including non-PyTorch memory, this process has 5.40 GiB memory in use. Of the allocated memory 4.70 GiB is allocated by PyTorch, and 596.59 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

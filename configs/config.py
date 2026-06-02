@@ -43,7 +43,7 @@ class ModelConfig:
       - Architecture: Does it support Flash Attention 2? RoPE scaling?
     """
     model_name_or_path: str = field(
-        default="Qwen/Qwen2-7B-Instruct",
+        default="Qwen/Qwen2-1.5B-Instruct",
         metadata={
             "help": (
                 "HuggingFace model ID or local path. "
@@ -248,7 +248,12 @@ class LoRAConfig:
 
     # ── Target Modules ────────────────────────────────────────────────────────
     target_modules: Optional[List[str]] = field(
-        default=None,
+            default_factory=lambda: [
+                "q_proj",
+                "k_proj",
+                "v_proj",
+                "o_proj",
+            ],
         metadata={
             "help": (
                 "Which weight matrices to apply LoRA to. Default=None means auto-detect.\n"
@@ -485,7 +490,7 @@ class DataConfig:
     )
 
     max_seq_length: int = field(
-        default=2048,
+        default=512,
         metadata={
             "help": (
                 "Maximum sequence length for training examples.\n"
@@ -618,7 +623,7 @@ class TrainingConfig:
     )
 
     per_device_train_batch_size: int = field(
-        default=4,
+        default=2,
         metadata={
             "help": (
                 "Batch size per GPU. With QLoRA on 7B model:\n"
@@ -891,7 +896,7 @@ class TrainingConfig:
     )
 
     run_name: Optional[str] = field(
-        default=None,
+        default="seq_len_512",
         metadata={"help": "WandB run name. Auto-generated if None."}
     )
 
